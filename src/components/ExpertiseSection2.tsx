@@ -19,7 +19,7 @@ const SERVICES = [
     title: "Artificial Intelligence",
     description: "Leverage cutting-edge AI and machine learning algorithms to unlock new opportunities, automate complex workflows, and gain predictive insights from your data.",
     icon: Cpu,
-    image: "https://images.unsplash.com/photo-1531297172867-131496294a4c?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
     color: "bg-blue-600",
     textColor: "text-white",
   },
