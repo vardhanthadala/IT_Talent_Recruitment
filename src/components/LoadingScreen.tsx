@@ -6,12 +6,12 @@ export default function LoadingScreen() {
   const [phase, setPhase] = useState(0);
 
   useEffect(() => {
-    // TEMPORARILY DISABLED: Check if the user has already seen the loader this session
-    // const hasSeenLoader = sessionStorage.getItem("hasSeenLoader_v3");
-    // if (hasSeenLoader) {
-    //   setPhase(3);
-    //   return;
-    // }
+    // Check if the user has already seen the loader this session
+    const hasSeenLoader = sessionStorage.getItem("hasSeenLoader_v3");
+    if (hasSeenLoader) {
+      setPhase(3);
+      return;
+    }
 
     // Phase 1: Enter (slide up from bottom to cover screen)
     const enterTimer = setTimeout(() => {

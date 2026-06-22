@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Smartphone, Globe, BarChart, Cloud, ChevronDown, Cpu, Lightbulb, Settings } from "lucide-react";
+import { Menu, X, Smartphone, Globe, BarChart, Cloud, ChevronDown, Cpu, Lightbulb, Settings, Compass, BrainCircuit, Layers, Users, Code, ShieldCheck, Server, Laptop, Landmark, HeartPulse, Factory, ShoppingCart, Briefcase } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +35,7 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "What We Do", href: "#", hasMegaMenu: true },
-    { name: "Industries", href: "/industries" },
+    { name: "Industries", href: "/industries", hasMegaMenu: true },
     { name: "Careers", href: "/careers" },
   ];
 
@@ -50,7 +50,7 @@ export default function Navbar() {
             {/* Logo Section */}
             <div className="flex-shrink-0 flex items-center w-auto lg:w-1/4">
               <Link href="/" className="flex items-center gap-2 group">
-                <Image src="/logos/Rolvatech_logo.png" alt="Rolva Tech" width={150} height={40} className="w-auto h-10 md:h-8 lg:h-10" priority />
+                {/* Place your logo Image component here later */}
               </Link>
             </div>
 
@@ -82,36 +82,188 @@ export default function Navbar() {
 
                   {/* Mega Menu Dropdown */}
                   {link.hasMegaMenu && activeMenu === link.name && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-[95vw] max-w-2xl cursor-default">
-                      <div className="bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-gray-100 p-8 grid grid-cols-1 gap-8 mt-1">
-                        {servicesMenu.map((section) => (
-                          <div key={section.category}>
-                            <h3 className="text-xs font-bold text-gray-400 tracking-widest mb-6 uppercase">
-                              {section.category}
-                            </h3>
-                            <div className="grid grid-cols-2 gap-y-8 gap-x-10">
-                              {section.items.map((item) => (
-                                <Link
-                                  key={item.name}
-                                  href={item.href}
-                                  className="group flex items-start gap-4 -m-3 p-3 rounded-xl hover:bg-gray-50 transition-colors"
-                                >
-                                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-white group-hover:shadow-sm border border-gray-100 transition-all">
-                                    <item.icon className="w-5 h-5 text-gray-500 group-hover:text-black transition-colors" />
-                                  </div>
-                                  <div>
-                                    <h4 className="text-sm font-semibold text-gray-900 group-hover:text-black transition-colors">
-                                      {item.name}
-                                    </h4>
-                                    <p className="mt-1 text-[13px] text-gray-500 leading-snug">
-                                      {item.description}
-                                    </p>
-                                  </div>
-                                </Link>
-                              ))}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-[95vw] max-w-5xl cursor-default pt-4 z-50">
+                      <div className="bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 p-8 flex flex-col">
+                        
+                        {link.name === "What We Do" && (
+                          <>
+                            {/* Icons row with connecting dotted line */}
+                            <div className="flex items-center justify-between mb-6 relative">
+                              {/* Dotted connecting line */}
+                              <div className="absolute top-1/2 left-[10%] right-[10%] h-[1px] border-t border-dashed border-gray-300 -z-10"></div>
+                              
+                              {/* Column 1 Icon (Development) */}
+                              <div className="w-10 h-10 flex items-center justify-center text-black z-10 relative bg-white">
+                                <Code className="w-6 h-6" strokeWidth={1.5} />
+                              </div>
+                              
+                              {/* Column 2 Icon (Testing) */}
+                              <div className="w-10 h-10 flex items-center justify-center text-black z-10 relative bg-white">
+                                <ShieldCheck className="w-6 h-6" strokeWidth={1.5} />
+                              </div>
+                              
+                              {/* Column 3 Icon (Operations) */}
+                              <div className="w-10 h-10 flex items-center justify-center text-black z-10 relative bg-white">
+                                <Server className="w-6 h-6" strokeWidth={1.5} />
+                              </div>
+
+                              {/* Column 4 Icon (AI & Data) */}
+                              <div className="w-10 h-10 flex items-center justify-center text-black z-10 relative bg-white">
+                                <BrainCircuit className="w-6 h-6" strokeWidth={1.5} />
+                              </div>
+                            </div>
+                            
+                            {/* Lists row */}
+                            <div className="grid grid-cols-4 gap-8 w-full">
+                              {/* Development */}
+                              <div>
+                                <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-4 uppercase text-[13px] tracking-wide">Development</h3>
+                                <ul className="space-y-3">
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Frontend Developers</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Backend Engineers</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Full Stack Developers</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Mobile App Devs</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">UI/UX Designers</Link>
+                                  </li>
+                                </ul>
+                              </div>
+
+                              {/* Testing */}
+                              <div>
+                                <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-4 uppercase text-[13px] tracking-wide">Testing & QA</h3>
+                                <ul className="space-y-3">
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Automation Engineers</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Manual QA Testers</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Performance Testers</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Security Analysts</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">SDET Professionals</Link>
+                                  </li>
+                                </ul>
+                              </div>
+
+                              {/* Operations */}
+                              <div>
+                                <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-4 uppercase text-[13px] tracking-wide">Operations</h3>
+                                <ul className="space-y-3">
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">DevOps Engineers</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Cloud Architects</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">System Administrators</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Network Engineers</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">IT Support Specialists</Link>
+                                  </li>
+                                </ul>
+                              </div>
+
+                              {/* AI & Data */}
+                              <div>
+                                <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-4 uppercase text-[13px] tracking-wide">AI & Data</h3>
+                                <ul className="space-y-3">
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Data Scientists</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Machine Learning Engineers</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Data Analysts</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Data Engineers</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="#" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">BI Developers</Link>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </>
+                        )}
+
+                        {link.name === "Industries" && (
+                          <div className="grid grid-cols-3 gap-8 w-full">
+                            {/* IT & Technology */}
+                            <div className="flex flex-col gap-3 group/ind cursor-pointer">
+                              <div className="w-10 h-10 flex items-center justify-center text-black bg-white transition-transform group-hover/ind:-translate-y-1">
+                                <Laptop className="w-6 h-6" strokeWidth={1.5} />
+                              </div>
+                              <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] text-[15px]">IT & Technology</h3>
+                              <p className="text-slate-500 text-[13px] leading-relaxed">Software, hardware, and IT services solutions.</p>
+                            </div>
+
+                            {/* Finance & Banking */}
+                            <div className="flex flex-col gap-3 group/ind cursor-pointer">
+                              <div className="w-10 h-10 flex items-center justify-center text-black bg-white transition-transform group-hover/ind:-translate-y-1">
+                                <Landmark className="w-6 h-6" strokeWidth={1.5} />
+                              </div>
+                              <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] text-[15px]">Finance & Banking</h3>
+                              <p className="text-slate-500 text-[13px] leading-relaxed">Fintech, banking, and insurance talent.</p>
+                            </div>
+
+                            {/* Healthcare */}
+                            <div className="flex flex-col gap-3 group/ind cursor-pointer">
+                              <div className="w-10 h-10 flex items-center justify-center text-black bg-white transition-transform group-hover/ind:-translate-y-1">
+                                <HeartPulse className="w-6 h-6" strokeWidth={1.5} />
+                              </div>
+                              <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] text-[15px]">Healthcare & Life Sciences</h3>
+                              <p className="text-slate-500 text-[13px] leading-relaxed">Medical, pharma, and biotech recruitment.</p>
+                            </div>
+
+                            {/* Manufacturing */}
+                            <div className="flex flex-col gap-3 group/ind cursor-pointer">
+                              <div className="w-10 h-10 flex items-center justify-center text-black bg-white transition-transform group-hover/ind:-translate-y-1">
+                                <Factory className="w-6 h-6" strokeWidth={1.5} />
+                              </div>
+                              <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] text-[15px]">Manufacturing & Logistics</h3>
+                              <p className="text-slate-500 text-[13px] leading-relaxed">Supply chain and industrial solutions.</p>
+                            </div>
+
+                            {/* Retail */}
+                            <div className="flex flex-col gap-3 group/ind cursor-pointer">
+                              <div className="w-10 h-10 flex items-center justify-center text-black bg-white transition-transform group-hover/ind:-translate-y-1">
+                                <ShoppingCart className="w-6 h-6" strokeWidth={1.5} />
+                              </div>
+                              <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] text-[15px]">Retail & E-commerce</h3>
+                              <p className="text-slate-500 text-[13px] leading-relaxed">Digital storefronts and consumer tech.</p>
+                            </div>
+
+                            {/* Professional Services */}
+                            <div className="flex flex-col gap-3 group/ind cursor-pointer">
+                              <div className="w-10 h-10 flex items-center justify-center text-black bg-white transition-transform group-hover/ind:-translate-y-1">
+                                <Briefcase className="w-6 h-6" strokeWidth={1.5} />
+                              </div>
+                              <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] text-[15px]">Professional Services</h3>
+                              <p className="text-slate-500 text-[13px] leading-relaxed">Non-IT, legal, and business consulting experts.</p>
                             </div>
                           </div>
-                        ))}
+                        )}
+
                       </div>
                     </div>
                   )}

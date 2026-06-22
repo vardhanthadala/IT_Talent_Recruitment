@@ -91,7 +91,7 @@ export default function EmpowerSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-3xl md:text-[44px] font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-6 tracking-[-0.02em] leading-[1.1]"
+            className="text-3xl md:text-[48px] lg:text-[56px] font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-6 tracking-[-0.02em] leading-[1.1]"
           >
             Empowering careers.{" "}
             <span
@@ -160,7 +160,7 @@ export default function EmpowerSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-3xl md:text-[40px] font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-2 tracking-[-0.02em] leading-[1.1]"
+            className="text-3xl md:text-[48px] lg:text-[56px] font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-6 tracking-[-0.02em] leading-[1.1]"
           >
             We help you build the products of tomorrow
           </motion.h2>
@@ -169,7 +169,7 @@ export default function EmpowerSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-3xl md:text-[44px] font-[family-name:var(--font-poppins-custom)] mb-8 tracking-[-0.02em] leading-[1.1]"
+            className="text-3xl md:text-[48px] lg:text-[56px] font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-6 tracking-[-0.02em] leading-[1.1]"
           >
             <span
               className={`font-normal italic text-blue-600 transition-opacity duration-500 inline-block ${fade ? "opacity-100" : "opacity-0"
