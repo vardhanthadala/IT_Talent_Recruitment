@@ -76,7 +76,7 @@ export default function ExpertiseSection2() {
               viewport={{ once: true }}
               className="text-3xl md:text-[48px] lg:text-[56px] font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-6 tracking-[-0.02em] leading-[1.1]"
             >
-              Expertise that drives <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">results.</span>
+              Expertise that drives <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400 italic">results.</span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
