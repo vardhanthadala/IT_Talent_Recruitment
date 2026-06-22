@@ -33,9 +33,9 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
     { name: "What We Do", href: "#", hasMegaMenu: true },
     { name: "Industries", href: "/industries" },
-    { name: "About Us", href: "/about" },
     { name: "Careers", href: "/careers" },
   ];
 
@@ -48,14 +48,14 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-stretch justify-between h-16 lg:h-[72px]">
             {/* Logo Section */}
-            <div className="flex-shrink-0 flex items-center w-1/4">
+            <div className="flex-shrink-0 flex items-center w-auto lg:w-1/4">
               <Link href="/" className="flex items-center gap-2 group">
                 <Image src="/logos/Rolvatech_logo.png" alt="Rolva Tech" width={150} height={40} className="w-auto h-10 md:h-8 lg:h-10" priority />
               </Link>
             </div>
 
             {/* Desktop Navigation (Centered) */}
-            <nav className="hidden md:flex items-stretch justify-center flex-1 space-x-1">
+            <nav className="hidden md:flex items-stretch justify-center flex-1 space-x-2 lg:space-x-4 xl:space-x-6">
               {navLinks.map((link) => (
                 <div
                   key={link.name}
@@ -70,19 +70,19 @@ export default function Navbar() {
                         e.preventDefault();
                       }
                     }}
-                    className={`px-2 lg:px-3 py-1.5 rounded-md text-[15px] lg:text-[16px] font-[family-name:var(--font-poppins-custom)] font-medium transition-colors flex items-center gap-1 relative ${activeMenu === link.name ? "text-[#F05A28]" : "text-gray-700 hover:text-gray-900"
+                    className={`whitespace-nowrap px-1.5 md:px-2 lg:px-3 py-1.5 rounded-md text-[14px] lg:text-[16px] font-[family-name:var(--font-poppins-custom)] font-medium transition-colors flex items-center gap-1 relative ${activeMenu === link.name ? "text-blue-600" : "text-gray-700 hover:text-gray-900"
                       }`}
                   >
                     {link.name}
                     {link.hasMegaMenu && (
                       <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeMenu === link.name ? "rotate-180" : ""}`} />
                     )}
-                    <span className="absolute inset-x-3 bottom-0 h-[2px] bg-[#F05A28] origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                    <span className="absolute inset-x-3 bottom-0 h-[2px] bg-blue-600 origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100" />
                   </Link>
 
                   {/* Mega Menu Dropdown */}
                   {link.hasMegaMenu && activeMenu === link.name && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-screen max-w-2xl cursor-default">
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-[95vw] max-w-2xl cursor-default">
                       <div className="bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-gray-100 p-8 grid grid-cols-1 gap-8 mt-1">
                         {servicesMenu.map((section) => (
                           <div key={section.category}>
@@ -120,8 +120,8 @@ export default function Navbar() {
             </nav>
 
             {/* Right Actions */}
-            <div className="hidden md:flex items-center justify-end w-1/4 space-x-6">
-              <Link href="/contact" className="whitespace-nowrap px-4 lg:px-5 py-2 rounded-full bg-[#F05A28] text-white text-[15px] lg:text-[16px] font-[family-name:var(--font-poppins-custom)] font-medium hover:bg-[#E04816] transition-colors">
+            <div className="hidden md:flex items-center justify-end w-auto lg:w-1/4 space-x-6">
+              <Link href="/contact" className="whitespace-nowrap px-4 lg:px-5 py-2 rounded-full bg-blue-600 text-white text-[15px] lg:text-[16px] font-[family-name:var(--font-poppins-custom)] font-medium hover:bg-blue-700 transition-colors">
                 Contact Us
               </Link>
             </div>
@@ -204,7 +204,7 @@ export default function Navbar() {
           <div className="border-t border-gray-100 pt-4 mt-4 space-y-2">
             <Link
               href="/contact"
-              className="block px-3 py-3 rounded-lg text-[16px] font-[family-name:var(--font-poppins-custom)] font-medium text-white bg-[#F05A28] hover:bg-[#E04816] transition-colors text-center mt-4"
+              className="block px-3 py-3 rounded-lg text-[16px] font-[family-name:var(--font-poppins-custom)] font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors text-center mt-4"
               onClick={() => setIsOpen(false)}
             >
               Contact Us
