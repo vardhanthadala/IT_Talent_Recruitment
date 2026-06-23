@@ -12,7 +12,7 @@ interface CtaData {
 }
 
 export default function CtaSection({ data }: { data: CtaData }) {
-  const customEase = [0.22, 1, 0.36, 1]; // Smooth, agency-level easing
+  const customEase = [0.22, 1, 0.36, 1] as const; // Smooth, agency-level easing
 
   return (
     <section className="relative w-full bg-[#161a1d] py-24 overflow-hidden border-t border-white/10">

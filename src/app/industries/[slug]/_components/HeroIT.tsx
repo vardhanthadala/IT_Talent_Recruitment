@@ -14,7 +14,7 @@ interface HeroData {
 }
 
 export default function HeroIndustry({ data }: { data: HeroData }) {
-  const customEase = [0.22, 1, 0.36, 1]; // Smooth, agency-level easing
+  const customEase = [0.22, 1, 0.36, 1] as const; // Smooth, agency-level easing
 
   return (
     <section className="relative w-full bg-[#161a1d] min-h-[calc(100vh-72px)] flex items-center overflow-hidden">

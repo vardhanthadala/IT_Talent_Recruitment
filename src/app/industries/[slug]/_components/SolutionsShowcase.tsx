@@ -34,7 +34,7 @@ function ParallaxImage({ imageSrc, alt, unwrapDirection }: { imageSrc: string, a
   });
   
   const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-  const customEase = [0.22, 1, 0.36, 1];
+  const customEase = [0.22, 1, 0.36, 1] as const;
 
   return (
     <div ref={ref} className="w-full h-[400px] md:h-[500px] rounded-3xl overflow-hidden relative shadow-xl shadow-slate-200/50 border border-gray-100">
@@ -64,7 +64,7 @@ function ParallaxImage({ imageSrc, alt, unwrapDirection }: { imageSrc: string, a
 }
 
 export default function SolutionsShowcase({ data }: { data: SolutionsData }) {
-  const customEase = [0.22, 1, 0.36, 1]; // Smooth, agency-level easing
+  const customEase = [0.22, 1, 0.36, 1] as const; // Smooth, agency-level easing
 
   return (
     <section className="w-full bg-white py-20 md:py-32 overflow-hidden">

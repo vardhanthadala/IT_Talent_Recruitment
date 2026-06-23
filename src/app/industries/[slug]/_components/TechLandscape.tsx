@@ -22,7 +22,7 @@ interface LandscapeData {
 }
 
 export default function TechLandscape({ data }: { data: LandscapeData }) {
-  const customEase = [0.22, 1, 0.36, 1]; // Smooth, agency-level easing
+  const customEase = [0.22, 1, 0.36, 1] as const; // Smooth, agency-level easing
 
   const containerVariants = {
     hidden: { opacity: 0 },
