@@ -86,7 +86,9 @@ export default function JobApplyClient({ job }: { job: Job }) {
         data.append("coverLetter", formData.coverLetter);
         data.append("jobSlug", job.slug);
         data.append("jobTitle", job.title);
-        data.append("resume", resume);
+        if (resume) {
+            data.append("resume", resume);
+        }
 
         try {
             const res = await fetch("/api/apply", {
