@@ -24,7 +24,7 @@ export default function RoleOverview({ role }: { role: RoleDetails }) {
                             Key Responsibilities
                         </h3>
                         <div className="flex flex-col gap-5">
-                            {role.responsibilities.map((resp, index) => (
+                            {role.deliverables.map((resp, index) => (
                                 <div key={index} className="flex items-start gap-4">
                                     <div className="mt-1 flex-shrink-0">
                                         <CheckCircle2 className="w-6 h-6 text-[#0077b5]" />
