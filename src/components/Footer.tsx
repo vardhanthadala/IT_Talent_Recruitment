@@ -130,7 +130,7 @@ export default function Footer() {
             <Link href="#" className="text-[13px] font-[family-name:var(--font-poppins-custom)] text-gray-500 hover:text-[#0f172a]">Terms of Use</Link>
           </div>
           <p className="text-[13px] font-[family-name:var(--font-poppins-custom)] text-gray-500">
-            <span className="text-blue-600 font-medium">Company Name.</span> © {new Date().getFullYear()} All rights reserved. Powered By <a href="https://dexze.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-medium hover:underline transition-all">Dexze</a>
+            <span className="text-blue-600 font-medium">Sreehisoft Solutions.</span> © {new Date().getFullYear()} All rights reserved. Powered By <a href="https://dexze.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-medium hover:underline transition-all">Dexze</a>
           </p>
         </div>
 

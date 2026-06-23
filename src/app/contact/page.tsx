@@ -1,26 +1,32 @@
 import React from 'react';
+import { Metadata } from "next";
 import './contact.css';
 import HeroSection from './_components/HeroSection';
 import TrustBar from './_components/TrustBar';
 import ContactFormSection from './_components/ContactFormSection';
+import ContactClient from "./ContactClient";
 import WhyWorkWithUs from './_components/WhyWorkWithUs';
 import GlobalReach from './_components/GlobalReach';
 import FinalCTA from './_components/FinalCTA';
 
-export const metadata = {
-  title: 'Contact Us | Let\'s Build Something Exceptional',
-  description: 'Whether you\'re planning a website, SaaS platform, custom software solution, or digital transformation, our team is ready to help bring your vision to life.',
+export const metadata: Metadata = {
+    title: "Contact Us | Sreehisoft Solutions",
+    description: "Get in touch with Sreehisoft Solutions for your IT staffing, recruitment, and technology service needs.",
 };
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-slate-50 selection:bg-blue-200 selection:text-blue-900 overflow-x-hidden">
+    <div className="min-h-screen bg-slate-50 selection:bg-blue-200 selection:text-blue-900 overflow-x-hidden">
       <HeroSection />
       <TrustBar />
-      <ContactFormSection />
+      
+      {/* You can choose to use your new ContactFormSection or the existing ContactClient here */}
+      <ContactClient />
+      {/* <ContactFormSection /> */}
+
       <WhyWorkWithUs />
       <GlobalReach />
       <FinalCTA />
-    </main>
+    </div>
   );
 }
