@@ -19,25 +19,25 @@ export default function Clients() {
     {
       name: "David Mitchell",
       title: "VP of Engineering at TechNova",
-      text: "Dexze completely transformed our hiring process. Their team understood our highly specific technical requirements and provided us with top-tier engineers who hit the ground running. We couldn't be happier.",
+      text: "Sreehisoft Solutions completely transformed our hiring process. Their team understood our highly specific technical requirements and provided us with top-tier engineers who hit the ground running. We couldn't be happier.",
       avatar: "https://i.pravatar.cc/150?img=11"
     },
     {
       name: "Sarah Jenkins",
       title: "Director of Talent Acquisition at CloudScale",
-      text: "Finding reliable IT talent in today's market is a huge challenge. Dexze's rigorous vetting process and deep industry network saved us countless hours and delivered exceptional candidates.",
+      text: "Finding reliable IT talent in today's market is a huge challenge. Sreehisoft Solutions's rigorous vetting process and deep industry network saved us countless hours and delivered exceptional candidates.",
       avatar: "https://i.pravatar.cc/150?img=5"
     },
     {
       name: "Marcus Reynolds",
       title: "Chief Technology Officer at FinServe",
-      text: "What sets Dexze apart is their commitment to understanding our culture. The developers they placed with us weren't just technically brilliant—they were the perfect cultural fit for our fast-paced startup.",
+      text: "What sets Sreehisoft Solutions apart is their commitment to understanding our culture. The developers they placed with us weren't just technically brilliant—they were the perfect cultural fit for our fast-paced startup.",
       avatar: "https://i.pravatar.cc/150?img=8"
     },
     {
       name: "Elena Rodriguez",
       title: "Head of Software Development at Innovate AI",
-      text: "We needed to scale our backend team rapidly without compromising on quality. Dexze acted as a true partner, streamlining the entire recruitment cycle and consistently exceeding our expectations.",
+      text: "We needed to scale our backend team rapidly without compromising on quality. Sreehisoft Solutions acted as a true partner, streamlining the entire recruitment cycle and consistently exceeding our expectations.",
       avatar: "https://i.pravatar.cc/150?img=9"
     }
   ];

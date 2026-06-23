@@ -85,7 +85,7 @@ export default function Leaders() {
                   Our <span className="text-[#0077b5] italic">Leaders</span>
                 </h2>
                 <p className="text-base sm:text-lg font-[family-name:var(--font-poppins-custom)] font-light text-gray-700 leading-[1.7] mb-6">
-                  At Dexze, we believe maximizing a company's investment in technology requires empowering a company's most valuable asset — their people. Our Leadership team embodies this focus through the empowerment of our own people. 
+                  At Sreehisoft Solutions, we believe maximizing a company's investment in technology requires empowering a company's most valuable asset — their people. Our Leadership team embodies this focus through the empowerment of our own people. 
                 </p>
                 <p className="text-base sm:text-lg font-[family-name:var(--font-poppins-custom)] font-light text-gray-700 leading-[1.7]">
                   Many of our Leaders began as individual contributors and rose through the ranks to shepherd others, own process, and deliver excellence in IT Staffing and Services.

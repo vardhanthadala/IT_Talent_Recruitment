@@ -120,19 +120,19 @@ export default function Navbar() {
                                 <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-4 uppercase text-[13px] tracking-wide">Development</h3>
                                 <ul className="space-y-3">
                                   <li>
-                                    <Link href="/what-we-do/frontend-developers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Frontend Developers</Link>
+                                    <Link href="/what-we-do/frontend-developers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Frontend Engineering</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/backend-engineers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Backend Engineers</Link>
+                                    <Link href="/what-we-do/backend-engineers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Backend Engineering</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/full-stack-developers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Full Stack Developers</Link>
+                                    <Link href="/what-we-do/full-stack-developers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Full Stack Development</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/mobile-app-devs" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Mobile App Devs</Link>
+                                    <Link href="/what-we-do/mobile-app-devs" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Mobile App Development</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/ui-ux-designers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">UI/UX Designers</Link>
+                                    <Link href="/what-we-do/ui-ux-designers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">UI/UX Design</Link>
                                   </li>
                                 </ul>
                               </div>
@@ -142,19 +142,19 @@ export default function Navbar() {
                                 <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-4 uppercase text-[13px] tracking-wide">Testing & QA</h3>
                                 <ul className="space-y-3">
                                   <li>
-                                    <Link href="/what-we-do/automation-engineers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Automation Engineers</Link>
+                                    <Link href="/what-we-do/automation-engineers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Automation Testing</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/manual-qa-testers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Manual QA Testers</Link>
+                                    <Link href="/what-we-do/manual-qa-testers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Manual QA Testing</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/performance-testers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Performance Testers</Link>
+                                    <Link href="/what-we-do/performance-testers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Performance Testing</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/security-analysts" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Security Analysts</Link>
+                                    <Link href="/what-we-do/security-analysts" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Security Analysis</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/sdet-professionals" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">SDET Professionals</Link>
+                                    <Link href="/what-we-do/sdet-professionals" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">SDET Services</Link>
                                   </li>
                                 </ul>
                               </div>
@@ -164,19 +164,19 @@ export default function Navbar() {
                                 <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-4 uppercase text-[13px] tracking-wide">Operations</h3>
                                 <ul className="space-y-3">
                                   <li>
-                                    <Link href="/what-we-do/devops-engineers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">DevOps Engineers</Link>
+                                    <Link href="/what-we-do/devops-engineers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">DevOps Services</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/cloud-architects" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Cloud Architects</Link>
+                                    <Link href="/what-we-do/cloud-architects" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Cloud Architecture</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/system-administrators" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">System Administrators</Link>
+                                    <Link href="/what-we-do/system-administrators" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">System Administration</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/network-engineers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Network Engineers</Link>
+                                    <Link href="/what-we-do/network-engineers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Network Engineering</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/it-support-specialists" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">IT Support Specialists</Link>
+                                    <Link href="/what-we-do/it-support-specialists" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">IT Support</Link>
                                   </li>
                                 </ul>
                               </div>
@@ -186,19 +186,19 @@ export default function Navbar() {
                                 <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-4 uppercase text-[13px] tracking-wide">AI & Data</h3>
                                 <ul className="space-y-3">
                                   <li>
-                                    <Link href="/what-we-do/data-scientists" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Data Scientists</Link>
+                                    <Link href="/what-we-do/data-scientists" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Data Science</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/machine-learning-engineers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Machine Learning Engineers</Link>
+                                    <Link href="/what-we-do/machine-learning-engineers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Machine Learning Engineering</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/data-analysts" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Data Analysts</Link>
+                                    <Link href="/what-we-do/data-analysts" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Data Analysis</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/data-engineers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Data Engineers</Link>
+                                    <Link href="/what-we-do/data-engineers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Data Engineering</Link>
                                   </li>
                                   <li>
-                                    <Link href="/what-we-do/bi-developers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">BI Developers</Link>
+                                    <Link href="/what-we-do/bi-developers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Business Intelligence</Link>
                                   </li>
                                 </ul>
                               </div>
@@ -307,7 +307,7 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
           <Link href="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
-            <Image src="/logos/Rolvatech_logo.png" alt="Rolva Tech" width={150} height={40} className="w-auto h-8" priority />
+            <Image src="/logos/Rolvatech_logo.png" alt="Sreehisoft Solutions" width={150} height={40} className="w-auto h-8" priority />
           </Link>
           <button
             onClick={() => setIsOpen(false)}

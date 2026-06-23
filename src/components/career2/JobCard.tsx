@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Briefcase, Banknote, Clock } from "lucide-react";
+import { ArrowUpRight, MapPin, Briefcase, Clock, Banknote } from "lucide-react";
 import type { Job } from "@/data/jobs";
 
 interface JobCardProps {
@@ -10,57 +10,60 @@ interface JobCardProps {
 
 export default function JobCard({ job, isNew = false, salaryRange }: JobCardProps) {
     return (
-        <div className="border border-gray-200 rounded-xl p-6 bg-white hover:border-blue-600/30 hover:shadow-md transition-all group">
-            {isNew && (
-                <div className="mb-4">
-                    <span className="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[0.65rem] font-bold uppercase tracking-wider rounded-md">
-                        New
-                    </span>
-                </div>
-            )}
+        <div className="group flex flex-col md:flex-row md:items-center justify-between gap-6 w-full hover:bg-black/[0.02] p-4 -mx-4 rounded-xl transition-colors">
             
-            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-5">
-                <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{job.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed line-clamp-2 max-w-2xl">
-                        {job.description}
-                    </p>
-                </div>
+            <div className="flex flex-col gap-2">
+                {isNew && (
+                    <div className="mb-1">
+                        <span className="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[0.65rem] font-bold uppercase tracking-wider rounded-md">
+                            New
+                        </span>
+                    </div>
+                )}
                 
-                <Link 
-                    href={`/career2/apply/${job.slug}`}
-                    className="shrink-0 inline-flex items-center justify-center px-4 py-2 border border-gray-200 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-colors whitespace-nowrap"
-                >
-                    View role
-                </Link>
+                <h3 className="text-2xl md:text-3xl font-[family-name:var(--font-poppins-custom)] font-bold text-neutral-900 group-hover:text-blue-600 transition-colors leading-[1.08] tracking-[-0.03em]">
+                    {job.title}
+                </h3>
+                
+                <p className="text-gray-600 text-sm md:text-base font-[family-name:var(--font-poppins-custom)] font-light max-w-2xl mt-1 mb-2 leading-[1.6]">
+                    {job.description}
+                </p>
+                
+                <div className="flex flex-wrap items-center gap-3">
+                    {job.location && (
+                        <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-gray-300 text-gray-900 text-sm font-medium bg-white">
+                            <MapPin className="w-4 h-4" />
+                            {job.location}
+                        </div>
+                    )}
+                    {job.type && (
+                        <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-gray-300 text-gray-900 text-sm font-medium bg-white">
+                            <Briefcase className="w-4 h-4" />
+                            {job.type}
+                        </div>
+                    )}
+                    {job.experience && (
+                        <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-gray-300 text-gray-900 text-sm font-medium bg-white">
+                            <Clock className="w-4 h-4" />
+                            {job.experience}
+                        </div>
+                    )}
+                    {salaryRange && (
+                        <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-gray-300 text-gray-900 text-sm font-medium bg-white">
+                            <Banknote className="w-4 h-4" />
+                            {salaryRange}
+                        </div>
+                    )}
+                </div>
             </div>
             
-            <div className="flex flex-wrap items-center gap-6 mt-6 pt-4 border-t border-gray-100">
-                {job.location && (
-                    <div className="flex items-center gap-2 text-gray-500 text-xs font-medium">
-                        <MapPin className="w-4 h-4 text-gray-400" />
-                        {job.location}
-                    </div>
-                )}
-                {job.type && (
-                    <div className="flex items-center gap-2 text-gray-500 text-xs font-medium">
-                        <Briefcase className="w-4 h-4 text-gray-400" />
-                        {job.type}
-                    </div>
-                )}
-                {job.experience && (
-                    <div className="flex items-center gap-2 text-gray-500 text-xs font-medium">
-                        <Clock className="w-4 h-4 text-gray-400" />
-                        {job.experience}
-                    </div>
-                )}
-                {salaryRange && (
-                    <div className="flex items-center gap-2 text-gray-500 text-xs font-medium">
-                        <Banknote className="w-4 h-4 text-gray-400" />
-                        {salaryRange}
-                    </div>
-                )}
-            </div>
+            <Link 
+                href={`/career2/apply/${job.slug}`}
+                className="shrink-0 flex items-center gap-1 text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors self-start md:self-auto mt-4 md:mt-0"
+            >
+                Apply <ArrowUpRight className="w-5 h-5 stroke-[2.5]" />
+            </Link>
+            
         </div>
     );
 }

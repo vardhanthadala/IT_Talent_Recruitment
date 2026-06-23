@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Career2Client from "./Career2Client";
 
 export const metadata: Metadata = {
-    title: "Open Opportunities | Rolva Tech",
+    title: "Open Opportunities | Sreehisoft Solutions",
     description: "Explore career opportunities that empower you to shape your future.",
 };
 

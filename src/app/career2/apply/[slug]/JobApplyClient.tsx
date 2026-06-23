@@ -16,10 +16,16 @@ export default function JobApplyClient({ job }: { job: Job }) {
         coverLetter: "",
     });
     const [resume, setResume] = useState<File | null>(null);
+    const [errors, setErrors] = useState<Record<string, string>>({});
     const [submitted, setSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [currentUrl, setCurrentUrl] = useState("");
     const fileInputRef = useRef<HTMLInputElement>(null);
     const applyRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        setCurrentUrl(window.location.href);
+    }, []);
 
     useEffect(() => {
         if (submitted) {
@@ -40,10 +46,33 @@ export default function JobApplyClient({ job }: { job: Job }) {
         }
     };
 
+    const validateForm = () => {
+        const newErrors: Record<string, string> = {};
+        
+        if (!formData.name.trim()) newErrors.name = "Name is required.";
+        if (!formData.email.trim() || !/^\S+@\S+\.\S+$/.test(formData.email)) {
+            newErrors.email = "A valid email address is required.";
+        }
+        if (formData.phone && !/^\+?[\d\s-]{10,}$/.test(formData.phone)) {
+            newErrors.phone = "Please enter a valid phone number.";
+        }
+        if (formData.linkedin && !/^https?:\/\/(www\.)?linkedin\.com\/.*$/.test(formData.linkedin)) {
+            newErrors.linkedin = "Please enter a valid LinkedIn URL.";
+        }
+        if (!resume) {
+            newErrors.resume = "Please attach your resume.";
+        } else if (resume.size > 5 * 1024 * 1024) {
+            newErrors.resume = "Resume file size must be less than 5MB.";
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!resume) {
-            alert("Please attach a resume.");
+        
+        if (!validateForm()) {
             return;
         }
 
@@ -86,8 +115,8 @@ export default function JobApplyClient({ job }: { job: Job }) {
     return (
         <main className="min-h-screen bg-white">
             {/* ─── JOB DETAILS ─── */}
-            <section className="border-b border-gray-200">
-                <div className="mx-auto w-full max-w-[960px] px-5 md:px-10 pt-32 md:pt-40 pb-12 md:pb-16">
+            <section className="bg-gradient-to-b from-blue-50/50 to-white border-b border-gray-100">
+                <div className="mx-auto w-full max-w-[960px] px-5 md:px-10 pt-12 md:pt-20 pb-12 md:pb-16">
                     {/* Back Link */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
@@ -108,7 +137,7 @@ export default function JobApplyClient({ job }: { job: Job }) {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-semibold leading-[1.1em] tracking-[-0.03em] text-neutral-900"
+                        className="text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-poppins-custom)] font-bold text-neutral-900 leading-[1.08] tracking-[-0.03em]"
                     >
                         {job.title}
                     </motion.h1>
@@ -118,24 +147,30 @@ export default function JobApplyClient({ job }: { job: Job }) {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm text-neutral-500"
+                        className="mt-8 flex flex-wrap gap-3"
                     >
                         {job.department && (
-                            <li className="flex items-center gap-2">
-                                <Building2 className="w-4 h-4" />
+                            <li className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-gray-200 text-gray-900 text-sm font-medium bg-white shadow-sm">
+                                <Building2 className="w-4 h-4 text-blue-600" />
                                 {job.department}
                             </li>
                         )}
                         {job.type && (
-                            <li className="flex items-center gap-2">
-                                <Briefcase className="w-4 h-4" />
+                            <li className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-gray-200 text-gray-900 text-sm font-medium bg-white shadow-sm">
+                                <Briefcase className="w-4 h-4 text-blue-600" />
                                 {job.type}
                             </li>
                         )}
                         {job.location && (
-                            <li className="flex items-center gap-2">
-                                <MapPin className="w-4 h-4" />
+                            <li className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-gray-200 text-gray-900 text-sm font-medium bg-white shadow-sm">
+                                <MapPin className="w-4 h-4 text-blue-600" />
                                 {job.location}
+                            </li>
+                        )}
+                        {job.experience && (
+                            <li className="flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-gray-200 text-gray-900 text-sm font-medium bg-white shadow-sm">
+                                <Clock className="w-4 h-4 text-blue-600" />
+                                {job.experience}
                             </li>
                         )}
                     </motion.ul>
@@ -154,44 +189,43 @@ export default function JobApplyClient({ job }: { job: Job }) {
                     >
                         {job.description && (
                             <>
-                                <h2 className="text-xl md:text-2xl font-semibold text-neutral-900 tracking-[-0.02em] mb-4">
+                                <h2 className="text-2xl md:text-3xl font-[family-name:var(--font-poppins-custom)] font-bold text-neutral-900 tracking-[-0.03em] mb-4 leading-[1.08]">
                                     Job Description
                                 </h2>
-                                <p className="text-neutral-600 leading-[1.7] text-base md:text-lg">{job.description}</p>
+                                <p className="text-neutral-600 leading-[1.6] text-base md:text-lg font-[family-name:var(--font-poppins-custom)] font-light">{job.description}</p>
                             </>
                         )}
                         
                         {job.experience && (
                             <>
-                                <h2 className="mt-10 text-xl md:text-2xl font-semibold text-neutral-900 tracking-[-0.02em]">
+                                <h2 className="mt-10 text-2xl md:text-3xl font-[family-name:var(--font-poppins-custom)] font-bold text-neutral-900 tracking-[-0.03em] leading-[1.08]">
                                     Experience
                                 </h2>
-                                <p className="mt-4 text-neutral-600 leading-[1.7] text-base md:text-lg">
+                                <p className="mt-4 text-neutral-600 leading-[1.6] text-base md:text-lg font-[family-name:var(--font-poppins-custom)] font-light">
                                     {job.experience}
                                 </p>
                             </>
                         )}
 
-                        <h2 className="mt-10 text-xl md:text-2xl font-semibold text-neutral-900 tracking-[-0.02em]">
+                        <h2 className="mt-10 text-2xl md:text-3xl font-[family-name:var(--font-poppins-custom)] font-bold text-neutral-900 tracking-[-0.03em] leading-[1.08]">
                             Key Responsibilities
                         </h2>
                         <ul className="mt-4 space-y-3">
                             {job.responsibilities.map((item, i) => (
                                 <li key={i} className="flex gap-3 text-neutral-600 leading-[1.6]">
-                                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0" />
+                                    <Check className="mt-1 h-5 w-5 text-blue-600 shrink-0" />
                                     {item}
                                 </li>
                             ))}
                         </ul>
 
-                        <h2 className="mt-10 text-xl md:text-2xl font-semibold text-neutral-900 tracking-[-0.02em]">
+                        <h2 className="mt-10 text-2xl md:text-3xl font-[family-name:var(--font-poppins-custom)] font-bold text-neutral-900 tracking-[-0.03em] leading-[1.08]">
                             Required Skills
-
                         </h2>
                         <ul className="mt-4 space-y-3">
                             {job.requirements.map((item, i) => (
                                 <li key={i} className="flex gap-3 text-neutral-600 leading-[1.6]">
-                                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-neutral-400 shrink-0" />
+                                    <Check className="mt-1 h-5 w-5 text-blue-600 shrink-0" />
                                     {item}
                                 </li>
                             ))}
@@ -199,7 +233,7 @@ export default function JobApplyClient({ job }: { job: Job }) {
 
                         {job.preferredSkills && job.preferredSkills.length > 0 && (
                             <>
-                                <h2 className="mt-10 text-xl md:text-2xl font-semibold text-neutral-900 tracking-[-0.02em]">
+                                <h2 className="mt-10 text-2xl md:text-3xl font-[family-name:var(--font-poppins-custom)] font-bold text-neutral-900 tracking-[-0.03em] leading-[1.08]">
                                     Preferred Skills
                                 </h2>
                                 <ul className="mt-4 space-y-3">
@@ -214,7 +248,7 @@ export default function JobApplyClient({ job }: { job: Job }) {
                         )}
                         {job.qualifications && job.qualifications.length > 0 && (
                             <>
-                                <h2 className="mt-10 text-xl md:text-2xl font-semibold text-neutral-900 tracking-[-0.02em]">
+                                <h2 className="mt-10 text-2xl md:text-3xl font-[family-name:var(--font-poppins-custom)] font-bold text-neutral-900 tracking-[-0.03em] leading-[1.08]">
                                     Qualifications
                                 </h2>
                                 <ul className="mt-4 space-y-3">
@@ -229,7 +263,7 @@ export default function JobApplyClient({ job }: { job: Job }) {
                         )}
                         {job.niceToHave && job.niceToHave.length > 0 && (
                             <>
-                                <h2 className="mt-10 text-xl md:text-2xl font-semibold text-neutral-900 tracking-[-0.02em]">
+                                <h2 className="mt-10 text-2xl md:text-3xl font-[family-name:var(--font-poppins-custom)] font-bold text-neutral-900 tracking-[-0.03em] leading-[1.08]">
                                     Nice to Have
                                 </h2>
                                 <ul className="mt-4 space-y-3">
@@ -244,10 +278,10 @@ export default function JobApplyClient({ job }: { job: Job }) {
                         )}
                         {job.keywords && (
                             <>
-                                <h2 className="mt-10 text-xl md:text-2xl font-semibold text-neutral-900 tracking-[-0.02em]">
+                                <h2 className="mt-10 text-2xl md:text-3xl font-[family-name:var(--font-poppins-custom)] font-bold text-neutral-900 tracking-[-0.03em] leading-[1.08]">
                                     Keywords
                                 </h2>
-                                <p className="mt-4 text-neutral-600 leading-[1.7] text-base md:text-lg whitespace-pre-wrap">
+                                <p className="mt-4 text-neutral-600 leading-[1.6] text-base md:text-lg whitespace-pre-wrap font-[family-name:var(--font-poppins-custom)] font-light">
                                     {job.keywords}
                                 </p>
                             </>
@@ -265,25 +299,15 @@ export default function JobApplyClient({ job }: { job: Job }) {
 
                         <button
                             onClick={scrollToApply}
-                            className="group mt-6 inline-block w-full"
+                            className="group mt-6 flex items-center justify-center w-full px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-colors"
                         >
-                            <span className="relative block">
-                                <span className="flex items-center justify-center rounded-[100vw] border-[1.5px] border-black bg-black px-6 py-3 text-sm font-medium text-white">
-                                    Apply now
-                                </span>
-                                <span
-                                    className="pointer-events-none absolute inset-[-1.5px] flex items-center justify-center rounded-[100vw] border-[1.5px] border-[#d8d8d8] bg-white px-6 py-3 text-sm font-medium text-black [clip-path:circle(0%_at_50%_50%)] group-hover:[clip-path:circle(150%_at_50%_50%)] transition-[clip-path] duration-400 ease-[cubic-bezier(0.33,1,0.68,1)]"
-                                    aria-hidden="true"
-                                >
-                                    Apply now
-                                </span>
-                            </span>
+                            Apply now
                         </button>
 
                         <div className="mt-8 space-y-3">
                             <a
-                                href={`mailto:?subject=Rolva Tech is hiring a ${encodeURIComponent(job.title)}&body=Check out this job: ${typeof window !== "undefined" ? window.location.href : ""}`}
-                                className="flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+                                href={currentUrl ? `mailto:?subject=Sreehisoft Solutions is hiring a ${encodeURIComponent(job.title)}&body=Check out this job: ${currentUrl}` : '#'}
+                                className="flex items-center gap-2 text-sm text-neutral-500 hover:text-blue-600 transition-colors"
                             >
                                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -292,10 +316,10 @@ export default function JobApplyClient({ job }: { job: Job }) {
                                 Tell a friend
                             </a>
                             <a
-                                href={`https://www.linkedin.com/sharing/share-offsite/?url=${typeof window !== "undefined" ? encodeURIComponent(window.location.href) : ""}`}
+                                href={currentUrl ? `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}` : '#'}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+                                className="flex items-center gap-2 text-sm text-neutral-500 hover:text-blue-600 transition-colors"
                             >
                                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -335,11 +359,11 @@ export default function JobApplyClient({ job }: { job: Job }) {
                                     <input
                                         type="text"
                                         name="name"
-                                        required
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition-all focus:border-black focus:ring-1 focus:ring-black"
+                                        className={`w-full rounded-lg border ${errors.name ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-blue-600 focus:ring-blue-600'} bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition-all focus:ring-1`}
                                     />
+                                    {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
                                 </div>
 
                                 {/* Email */}
@@ -350,11 +374,11 @@ export default function JobApplyClient({ job }: { job: Job }) {
                                     <input
                                         type="email"
                                         name="email"
-                                        required
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition-all focus:border-black focus:ring-1 focus:ring-black"
+                                        className={`w-full rounded-lg border ${errors.email ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-blue-600 focus:ring-blue-600'} bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition-all focus:ring-1`}
                                     />
+                                    {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
                                 </div>
 
                                 {/* Phone */}
@@ -367,8 +391,9 @@ export default function JobApplyClient({ job }: { job: Job }) {
                                         name="phone"
                                         value={formData.phone}
                                         onChange={handleChange}
-                                        className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition-all focus:border-black focus:ring-1 focus:ring-black"
+                                        className={`w-full rounded-lg border ${errors.phone ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-blue-600 focus:ring-blue-600'} bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition-all focus:ring-1`}
                                     />
+                                    {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
                                 </div>
 
                                 {/* Location */}
@@ -382,7 +407,7 @@ export default function JobApplyClient({ job }: { job: Job }) {
                                         placeholder="City, state, etc."
                                         value={formData.location}
                                         onChange={handleChange}
-                                        className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 outline-none transition-all focus:border-black focus:ring-1 focus:ring-black"
+                                        className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 outline-none transition-all focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
                                     />
                                 </div>
 
@@ -396,8 +421,9 @@ export default function JobApplyClient({ job }: { job: Job }) {
                                         name="linkedin"
                                         value={formData.linkedin}
                                         onChange={handleChange}
-                                        className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition-all focus:border-black focus:ring-1 focus:ring-black"
+                                        className={`w-full rounded-lg border ${errors.linkedin ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-blue-600 focus:ring-blue-600'} bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition-all focus:ring-1`}
                                     />
+                                    {errors.linkedin && <p className="mt-1 text-sm text-red-500">{errors.linkedin}</p>}
                                 </div>
 
 
@@ -409,7 +435,7 @@ export default function JobApplyClient({ job }: { job: Job }) {
                                     </label>
                                     <div
                                         onClick={() => fileInputRef.current?.click()}
-                                        className="flex items-center gap-3 w-full rounded-lg border border-dashed border-gray-300 bg-white px-4 py-3 text-sm cursor-pointer hover:border-gray-400 transition-colors"
+                                        className={`flex items-center gap-3 w-full rounded-lg border border-dashed ${errors.resume ? 'border-red-500 bg-red-50' : 'border-gray-300 bg-white hover:border-gray-400'} px-4 py-3 text-sm cursor-pointer transition-colors`}
                                     >
                                         {resume ? (
                                             <>
@@ -429,8 +455,8 @@ export default function JobApplyClient({ job }: { job: Job }) {
                                         accept=".pdf,.doc,.docx"
                                         onChange={handleFileChange}
                                         className="hidden"
-                                        required
                                     />
+                                    {errors.resume && <p className="mt-1 text-sm text-red-500">{errors.resume}</p>}
                                 </div>
 
                                 {/* Cover Letter */}
@@ -443,7 +469,7 @@ export default function JobApplyClient({ job }: { job: Job }) {
                                         rows={5}
                                         value={formData.coverLetter}
                                         onChange={handleChange}
-                                        className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition-all focus:border-black focus:ring-1 focus:ring-black resize-none"
+                                        className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-neutral-900 outline-none transition-all focus:border-blue-600 focus:ring-1 focus:ring-blue-600 resize-none"
                                         placeholder="Tell us why you're a great fit for this role..."
                                     />
                                 </div>
@@ -452,19 +478,9 @@ export default function JobApplyClient({ job }: { job: Job }) {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className={`group relative inline-block ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                                    className={`group flex items-center justify-center w-full px-6 py-4 bg-blue-600 text-white rounded-full font-medium transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-blue-700'}`}
                                 >
-                                    <span className="relative block">
-                                        <span className="flex items-center justify-center rounded-[100vw] border-[1.5px] border-black bg-black px-8 py-3.5 text-sm font-medium text-white">
-                                            {isSubmitting ? "Submitting..." : "Submit application"}
-                                        </span>
-                                        <span
-                                            className="pointer-events-none absolute inset-[-1.5px] flex items-center justify-center rounded-[100vw] border-[1.5px] border-[#d8d8d8] bg-white px-8 py-3.5 text-sm font-medium text-black [clip-path:circle(0%_at_50%_50%)] group-hover:[clip-path:circle(150%_at_50%_50%)] transition-[clip-path] duration-400 ease-[cubic-bezier(0.33,1,0.68,1)]"
-                                            aria-hidden="true"
-                                        >
-                                            {isSubmitting ? "Submitting..." : "Submit application"}
-                                        </span>
-                                    </span>
+                                    {isSubmitting ? "Submitting..." : "Submit application"}
                                 </button>
                             </form>
                         </motion.div>
@@ -482,7 +498,7 @@ export default function JobApplyClient({ job }: { job: Job }) {
                                 Your application has been sent!
                             </h2>
                             <p className="mt-4 text-neutral-500 max-w-md">
-                                You can expect to receive a confirmation email shortly. Thank you for your interest in joining Rolva Tech.
+                                You can expect to receive a confirmation email shortly. Thank you for your interest in joining Sreehisoft Solutions.
                             </p>
                             <Link
                                 href="/career2"

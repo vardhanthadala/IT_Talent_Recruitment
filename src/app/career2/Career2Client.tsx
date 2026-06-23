@@ -28,7 +28,7 @@ export default function Career2Client() {
     }, []);
 
     return (
-        <div className="flex-1 w-full bg-[#F8F9FA]">
+        <div className="flex-1 w-full bg-white">
             <HeaderSection searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
             <JobBoard searchQuery={searchQuery} jobs={jobs} isLoading={isLoading} />
         </div>

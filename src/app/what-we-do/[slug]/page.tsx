@@ -17,12 +17,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     
     if (!role) {
         return {
-            title: "Role Not Found - Dexze IT Recruitment",
+            title: "Role Not Found - Sreehisoft Solutions IT Recruitment",
         };
     }
 
     return {
-        title: `${role.title} | Dexze IT Recruitment`,
+        title: `${role.title} | Sreehisoft Solutions IT Recruitment`,
         description: role.shortDescription,
     };
 }

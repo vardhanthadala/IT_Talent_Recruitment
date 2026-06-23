@@ -11,10 +11,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const { slug } = await params;
     const jobs = await getJobsFromSheet();
     const job = jobs.find(j => j.slug === slug);
-    if (!job) return { title: "Job Not Found | Rolva Tech" };
+    if (!job) return { title: "Job Not Found | Sreehisoft Solutions" };
     return {
-        title: `${job.title} — Apply | Rolva Tech`,
-        description: `Apply for the ${job.title} position at Rolva Tech. ${job.type} · ${job.location}`,
+        title: `${job.title} — Apply | Sreehisoft Solutions`,
+        description: `Apply for the ${job.title} position at Sreehisoft Solutions. ${job.type} · ${job.location}`,
     };
 }
 

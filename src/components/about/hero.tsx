@@ -50,7 +50,6 @@ export default function Hero() {
               muted
               autoPlay
               playsInline
-              poster="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1920&auto=format&fit=crop"
             >
               <source src="/videos/aboutus_hero2.mp4" type="video/mp4" />
             </video>

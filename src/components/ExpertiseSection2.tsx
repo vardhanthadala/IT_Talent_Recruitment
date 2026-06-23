@@ -2,62 +2,44 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Cpu, LineChart, Globe, ShieldCheck, Smartphone, Settings } from "lucide-react";
+import { Cpu, ShieldCheck, Settings, Code } from "lucide-react";
 
 const SERVICES = [
   {
     id: "01",
-    title: "Digital Transformation",
-    description: "Accelerate your business with comprehensive digital strategies tailored for modern enterprises. We help you navigate the digital landscape to improve efficiency, agility, and customer experience.",
-    icon: Globe,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+    title: "Software Development",
+    description: "From cutting-edge frontend interfaces to scalable backend systems, we deliver full-stack solutions tailored to your business needs, including intuitive mobile apps and user-centric UI/UX design.",
+    icon: Code,
+    image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=1200&auto=format&fit=crop",
     color: "bg-[#0f172a]",
     textColor: "text-white",
   },
   {
     id: "02",
-    title: "Artificial Intelligence",
-    description: "Leverage cutting-edge AI and machine learning algorithms to unlock new opportunities, automate complex workflows, and gain predictive insights from your data.",
-    icon: Cpu,
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
+    title: "Testing & Quality Assurance",
+    description: "Ensure flawless performance and security with our comprehensive testing services. We offer automated, manual, performance, and security testing through expert QA analysts and SDET professionals.",
+    icon: ShieldCheck,
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop",
     color: "bg-blue-600",
     textColor: "text-white",
   },
   {
     id: "03",
-    title: "Data & BI",
-    description: "Transform raw, unstructured data into actionable, strategic insights with robust data pipelines, intuitive dashboards, and enterprise-grade business intelligence tools.",
-    icon: LineChart,
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1200&auto=format&fit=crop",
+    title: "IT Operations & Cloud",
+    description: "Streamline your IT infrastructure with robust DevOps practices, scalable cloud architectures, and reliable system administration. Our network engineers keep your business running smoothly 24/7.",
+    icon: Settings,
+    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format&fit=crop",
     color: "bg-white",
     textColor: "text-[#0f172a]",
   },
   {
     id: "04",
-    title: "Application Services",
-    description: "Deliver powerful, scalable corporate and consumer applications. From complex enterprise software to sleek mobile apps, we engineer solutions that perform.",
-    icon: Smartphone,
-    image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=1200&auto=format&fit=crop",
+    title: "AI & Data Science",
+    description: "Unlock the power of your data with advanced machine learning, predictive analytics, and business intelligence. Our data engineers and scientists build the pipelines that drive strategic decision-making.",
+    icon: Cpu,
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
     color: "bg-blue-50",
     textColor: "text-[#0f172a]",
-  },
-  {
-    id: "05",
-    title: "Technology Advisory",
-    description: "Navigate complex technology landscapes with expert guidance. We help you choose the right tech stack, architectural patterns, and scalability strategies.",
-    icon: ShieldCheck,
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop",
-    color: "bg-[#0f172a]",
-    textColor: "text-white",
-  },
-  {
-    id: "06",
-    title: "Managed IT Services",
-    description: "Reliable, scalable, and secure operations backed by strict SLAs. Focus on your core business while we handle your infrastructure and system reliability.",
-    icon: Settings,
-    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format&fit=crop",
-    color: "bg-blue-600",
-    textColor: "text-white",
   }
 ];
 
