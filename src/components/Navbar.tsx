@@ -36,7 +36,7 @@ export default function Navbar() {
     { name: "About Us", href: "/about" },
     { name: "What We Do", href: "#", hasMegaMenu: true },
     { name: "Industries", href: "/industries", hasMegaMenu: true },
-    { name: "Careers", href: "/careers" },
+    { name: "Careers", href: "/careers2" },
   ];
 
   return (
