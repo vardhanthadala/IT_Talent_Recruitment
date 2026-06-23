@@ -22,7 +22,7 @@ export default function JobBoard({ searchQuery, jobs, isLoading }: JobBoardProps
     if (isLoading) {
         return (
             <section id="job-board" className="bg-[#F8F9FA] pb-24 px-5 flex justify-center pt-12">
-                <Loader2 className="w-8 h-8 text-[#FF5A1F] animate-spin" />
+                <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
             </section>
         );
     }

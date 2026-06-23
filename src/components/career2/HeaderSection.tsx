@@ -9,7 +9,7 @@ interface HeaderSectionProps {
 export default function HeaderSection({ searchQuery, setSearchQuery }: HeaderSectionProps) {
     return (
         <section className="bg-[#F8F9FA] py-20 px-5 flex flex-col items-center justify-center text-center">
-            <div className="w-12 h-12 flex items-center justify-center mb-6 text-[#FF5A1F]">
+            <div className="w-12 h-12 flex items-center justify-center mb-6 text-blue-600">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                     <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
@@ -37,12 +37,12 @@ export default function HeaderSection({ searchQuery, setSearchQuery }: HeaderSec
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="Search for a role or keyword..." 
-                        className="w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF5A1F]/20 focus:border-[#FF5A1F] text-base text-gray-900 shadow-sm transition-all"
+                        className="w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 text-base text-gray-900 shadow-sm transition-all"
                     />
                 </div>
                 <button 
                     onClick={() => document.getElementById('job-board')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="w-full sm:w-auto px-8 py-3.5 bg-[#FF5A1F] hover:bg-[#e04e1a] text-white font-medium rounded-lg transition-all text-base whitespace-nowrap shadow-sm hover:shadow-md"
+                    className="w-full sm:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all text-base whitespace-nowrap shadow-sm hover:shadow-md"
                 >
                     Search Jobs
                 </button>

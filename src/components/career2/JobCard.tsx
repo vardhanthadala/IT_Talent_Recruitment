@@ -10,10 +10,10 @@ interface JobCardProps {
 
 export default function JobCard({ job, isNew = false, salaryRange }: JobCardProps) {
     return (
-        <div className="border border-gray-200 rounded-xl p-6 bg-white hover:border-[#FF5A1F]/30 hover:shadow-md transition-all group">
+        <div className="border border-gray-200 rounded-xl p-6 bg-white hover:border-blue-600/30 hover:shadow-md transition-all group">
             {isNew && (
                 <div className="mb-4">
-                    <span className="inline-block px-3 py-1 bg-[#FFF0E6] text-[#FF5A1F] text-[0.65rem] font-bold uppercase tracking-wider rounded-md">
+                    <span className="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[0.65rem] font-bold uppercase tracking-wider rounded-md">
                         New
                     </span>
                 </div>
@@ -21,7 +21,7 @@ export default function JobCard({ job, isNew = false, salaryRange }: JobCardProp
             
             <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-5">
                 <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#FF5A1F] transition-colors">{job.title}</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{job.title}</h3>
                     <p className="text-gray-500 text-sm leading-relaxed line-clamp-2 max-w-2xl">
                         {job.description}
                     </p>
