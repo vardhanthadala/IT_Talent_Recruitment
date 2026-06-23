@@ -136,7 +136,7 @@ export default function JobApplyClient({ job }: { job: Job }) {
 
                     {/* Title */}
                     <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: -30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="text-3xl md:text-4xl lg:text-5xl font-[family-name:var(--font-poppins-custom)] font-bold text-neutral-900 leading-[1.08] tracking-[-0.03em]"
@@ -184,8 +184,8 @@ export default function JobApplyClient({ job }: { job: Job }) {
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16">
                     {/* Main Content */}
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                         className="job-description"
                     >
@@ -292,8 +292,8 @@ export default function JobApplyClient({ job }: { job: Job }) {
 
                     {/* Sidebar */}
                     <motion.aside
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className="lg:sticky lg:top-28 self-start"
                     >

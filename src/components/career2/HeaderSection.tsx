@@ -1,5 +1,6 @@
 import { ArrowDown, Users, Briefcase } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface HeaderSectionProps {
     searchQuery: string;
@@ -10,15 +11,33 @@ export default function HeaderSection({ searchQuery, setSearchQuery }: HeaderSec
     return (
         <section className="bg-white py-20 px-5 flex flex-col items-center justify-center text-center">
             
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[64px] font-[family-name:var(--font-poppins-custom)] font-bold text-gray-900 leading-[1.08] tracking-[-0.03em] mb-4">
+            <motion.h1 
+                initial={{ opacity: 0, y: -30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="text-3xl sm:text-4xl lg:text-5xl xl:text-[64px] font-[family-name:var(--font-poppins-custom)] font-bold text-gray-900 leading-[1.08] tracking-[-0.03em] mb-4"
+            >
                 Join Our Team
-            </h1>
+            </motion.h1>
             
-            <p className="text-base sm:text-lg lg:text-[21px] font-[family-name:var(--font-poppins-custom)] font-light text-gray-500 max-w-2xl mx-auto mb-10 leading-[1.6]">
+            <motion.p 
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                className="text-base sm:text-lg lg:text-[21px] font-[family-name:var(--font-poppins-custom)] font-light text-gray-500 max-w-2xl mx-auto mb-10 leading-[1.6]"
+            >
                 Discover open roles where your skills can thrive. Take the next step in your career and help us build the future.
-            </p>
+            </motion.p>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-lg mt-6">
+            <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-lg mt-6"
+            >
                 <div className="relative w-full">
                     <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
                         <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +58,7 @@ export default function HeaderSection({ searchQuery, setSearchQuery }: HeaderSec
                 >
                     Search Jobs
                 </button>
-            </div>
+            </motion.div>
         </section>
     );
 }

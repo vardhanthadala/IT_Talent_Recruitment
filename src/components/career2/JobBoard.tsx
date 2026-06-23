@@ -2,6 +2,7 @@ import { useState } from "react";
 import JobCard from "./JobCard";
 import { Job } from "@/data/jobs";
 import { Loader2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface JobBoardProps {
     searchQuery: string;
@@ -47,7 +48,13 @@ export default function JobBoard({ searchQuery, jobs, isLoading }: JobBoardProps
             <div className="max-w-4xl mx-auto flex flex-col">
                 
                 {/* Department Filters (Pills) */}
-                <div className="flex items-center gap-3 overflow-x-auto pb-4 mb-8 hide-scrollbar">
+                <motion.div 
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="flex items-center gap-3 overflow-x-auto pb-4 mb-8 hide-scrollbar"
+                >
                     {departments.map(dept => (
                         <button
                             key={dept}
@@ -61,18 +68,25 @@ export default function JobBoard({ searchQuery, jobs, isLoading }: JobBoardProps
                             {dept}
                         </button>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* Job List */}
                 <div className="flex flex-col border-t border-gray-300">
-                    {filteredJobs.map((job) => (
-                        <div key={job.slug} className="py-8 border-b border-gray-300">
+                    {filteredJobs.map((job, index) => (
+                        <motion.div 
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            key={job.slug} 
+                            className="py-8 border-b border-gray-300"
+                        >
                             <JobCard 
                                 job={job} 
                                 isNew={isJobNew(job.postedDate)}
                                 salaryRange={job.salary}
                             />
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 
