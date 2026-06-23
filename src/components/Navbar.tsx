@@ -3,12 +3,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X, Smartphone, Globe, BarChart, Cloud, ChevronDown, Cpu, Lightbulb, Settings, Compass, BrainCircuit, Layers, Users, Code, ShieldCheck, Server, Laptop, Landmark, HeartPulse, Factory, ShoppingCart, Briefcase } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const pathname = usePathname();
 
   // Handle scroll effect
   useEffect(() => {
@@ -70,7 +72,7 @@ export default function Navbar() {
                         e.preventDefault();
                       }
                     }}
-                    className={`whitespace-nowrap px-1.5 md:px-2 lg:px-3 py-1.5 rounded-md text-[14px] lg:text-[16px] font-[family-name:var(--font-poppins-custom)] font-semibold transition-colors flex items-center gap-1 relative ${activeMenu === link.name ? "text-blue-600" : "text-gray-700 hover:text-gray-900"
+                    className={`whitespace-nowrap px-1.5 md:px-2 lg:px-3 py-1.5 rounded-md text-[14px] lg:text-[16px] font-[family-name:var(--font-poppins-custom)] font-semibold transition-colors flex items-center gap-1 relative ${(activeMenu === link.name || (link.href !== '/' && pathname.startsWith(link.href)) || (link.href === '/' && pathname === '/')) ? "text-blue-600" : "text-gray-700 hover:text-gray-900"
                       }`}
                   >
                     {link.name}
@@ -209,58 +211,58 @@ export default function Navbar() {
                         {link.name === "Industries" && (
                           <div className="grid grid-cols-3 gap-8 w-full">
                             {/* IT & Technology */}
-                            <div className="flex flex-col gap-3 group/ind cursor-pointer">
-                              <div className="w-10 h-10 flex items-center justify-center text-black bg-white transition-transform group-hover/ind:-translate-y-1">
+                            <Link href="/industries/it-technology" onClick={() => setIsOpen(false)} className="flex flex-col gap-3 group/ind cursor-pointer">
+                              <div className={`w-10 h-10 flex items-center justify-center transition-transform group-hover/ind:-translate-y-1 ${pathname === '/industries/it-technology' ? 'bg-blue-50 text-blue-600' : 'text-black bg-white'}`}>
                                 <Laptop className="w-6 h-6" strokeWidth={1.5} />
                               </div>
-                              <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] text-[15px]">IT & Technology</h3>
+                              <h3 className={`font-[family-name:var(--font-poppins-custom)] font-bold text-[15px] ${pathname === '/industries/it-technology' ? 'text-blue-600' : 'text-[#0f172a]'}`}>IT & Technology</h3>
                               <p className="text-slate-500 text-[13px] leading-relaxed">Software, hardware, and IT services solutions.</p>
-                            </div>
+                            </Link>
 
                             {/* Finance & Banking */}
-                            <div className="flex flex-col gap-3 group/ind cursor-pointer">
-                              <div className="w-10 h-10 flex items-center justify-center text-black bg-white transition-transform group-hover/ind:-translate-y-1">
+                            <Link href="/industries/finance-banking" onClick={() => setIsOpen(false)} className="flex flex-col gap-3 group/ind cursor-pointer">
+                              <div className={`w-10 h-10 flex items-center justify-center transition-transform group-hover/ind:-translate-y-1 ${pathname === '/industries/finance-banking' ? 'bg-blue-50 text-blue-600' : 'text-black bg-white'}`}>
                                 <Landmark className="w-6 h-6" strokeWidth={1.5} />
                               </div>
-                              <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] text-[15px]">Finance & Banking</h3>
+                              <h3 className={`font-[family-name:var(--font-poppins-custom)] font-bold text-[15px] ${pathname === '/industries/finance-banking' ? 'text-blue-600' : 'text-[#0f172a]'}`}>Finance & Banking</h3>
                               <p className="text-slate-500 text-[13px] leading-relaxed">Fintech, banking, and insurance talent.</p>
-                            </div>
+                            </Link>
 
                             {/* Healthcare */}
-                            <div className="flex flex-col gap-3 group/ind cursor-pointer">
-                              <div className="w-10 h-10 flex items-center justify-center text-black bg-white transition-transform group-hover/ind:-translate-y-1">
+                            <Link href="/industries/healthcare-life-sciences" onClick={() => setIsOpen(false)} className="flex flex-col gap-3 group/ind cursor-pointer">
+                              <div className={`w-10 h-10 flex items-center justify-center transition-transform group-hover/ind:-translate-y-1 ${pathname === '/industries/healthcare-life-sciences' ? 'bg-blue-50 text-blue-600' : 'text-black bg-white'}`}>
                                 <HeartPulse className="w-6 h-6" strokeWidth={1.5} />
                               </div>
-                              <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] text-[15px]">Healthcare & Life Sciences</h3>
+                              <h3 className={`font-[family-name:var(--font-poppins-custom)] font-bold text-[15px] ${pathname === '/industries/healthcare-life-sciences' ? 'text-blue-600' : 'text-[#0f172a]'}`}>Healthcare & Life Sciences</h3>
                               <p className="text-slate-500 text-[13px] leading-relaxed">Medical, pharma, and biotech recruitment.</p>
-                            </div>
+                            </Link>
 
                             {/* Manufacturing */}
-                            <div className="flex flex-col gap-3 group/ind cursor-pointer">
-                              <div className="w-10 h-10 flex items-center justify-center text-black bg-white transition-transform group-hover/ind:-translate-y-1">
+                            <Link href="/industries/manufacturing-logistics" onClick={() => setIsOpen(false)} className="flex flex-col gap-3 group/ind cursor-pointer">
+                              <div className={`w-10 h-10 flex items-center justify-center transition-transform group-hover/ind:-translate-y-1 ${pathname === '/industries/manufacturing-logistics' ? 'bg-blue-50 text-blue-600' : 'text-black bg-white'}`}>
                                 <Factory className="w-6 h-6" strokeWidth={1.5} />
                               </div>
-                              <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] text-[15px]">Manufacturing & Logistics</h3>
+                              <h3 className={`font-[family-name:var(--font-poppins-custom)] font-bold text-[15px] ${pathname === '/industries/manufacturing-logistics' ? 'text-blue-600' : 'text-[#0f172a]'}`}>Manufacturing & Logistics</h3>
                               <p className="text-slate-500 text-[13px] leading-relaxed">Supply chain and industrial solutions.</p>
-                            </div>
+                            </Link>
 
                             {/* Retail */}
-                            <div className="flex flex-col gap-3 group/ind cursor-pointer">
-                              <div className="w-10 h-10 flex items-center justify-center text-black bg-white transition-transform group-hover/ind:-translate-y-1">
+                            <Link href="/industries/retail-ecommerce" onClick={() => setIsOpen(false)} className="flex flex-col gap-3 group/ind cursor-pointer">
+                              <div className={`w-10 h-10 flex items-center justify-center transition-transform group-hover/ind:-translate-y-1 ${pathname === '/industries/retail-ecommerce' ? 'bg-blue-50 text-blue-600' : 'text-black bg-white'}`}>
                                 <ShoppingCart className="w-6 h-6" strokeWidth={1.5} />
                               </div>
-                              <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] text-[15px]">Retail & E-commerce</h3>
+                              <h3 className={`font-[family-name:var(--font-poppins-custom)] font-bold text-[15px] ${pathname === '/industries/retail-ecommerce' ? 'text-blue-600' : 'text-[#0f172a]'}`}>Retail & E-commerce</h3>
                               <p className="text-slate-500 text-[13px] leading-relaxed">Digital storefronts and consumer tech.</p>
-                            </div>
+                            </Link>
 
                             {/* Professional Services */}
-                            <div className="flex flex-col gap-3 group/ind cursor-pointer">
-                              <div className="w-10 h-10 flex items-center justify-center text-black bg-white transition-transform group-hover/ind:-translate-y-1">
+                            <Link href="/industries/professional-services" onClick={() => setIsOpen(false)} className="flex flex-col gap-3 group/ind cursor-pointer">
+                              <div className={`w-10 h-10 flex items-center justify-center transition-transform group-hover/ind:-translate-y-1 ${pathname === '/industries/professional-services' ? 'bg-blue-50 text-blue-600' : 'text-black bg-white'}`}>
                                 <Briefcase className="w-6 h-6" strokeWidth={1.5} />
                               </div>
-                              <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] text-[15px]">Professional Services</h3>
+                              <h3 className={`font-[family-name:var(--font-poppins-custom)] font-bold text-[15px] ${pathname === '/industries/professional-services' ? 'text-blue-600' : 'text-[#0f172a]'}`}>Professional Services</h3>
                               <p className="text-slate-500 text-[13px] leading-relaxed">Non-IT, legal, and business consulting experts.</p>
-                            </div>
+                            </Link>
                           </div>
                         )}
 
