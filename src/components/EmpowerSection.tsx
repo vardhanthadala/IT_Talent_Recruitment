@@ -127,7 +127,7 @@ export default function EmpowerSection() {
               Join our exclusive network of elite developers. We connect you directly with fast-growing tech startups and innovative companies for roles that perfectly match your stack and ambitions.
             </p>
             <div>
-              <Link href="/jobs" className="inline-block bg-blue-600 text-white text-[15px] font-[family-name:var(--font-poppins-custom)] font-medium px-8 py-3.5 rounded-sm hover:bg-blue-700 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+              <Link href="/career2" className="inline-block bg-blue-600 text-white text-[15px] font-[family-name:var(--font-poppins-custom)] font-medium px-8 py-3.5 rounded-sm hover:bg-blue-700 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
                 Find your next job now
               </Link>
             </div>
@@ -146,7 +146,7 @@ export default function EmpowerSection() {
               Don't let talent shortages slow your product roadmap. We provide scaling startups with highly-vetted technical talent, ready to ship code and make an immediate impact from day one.
             </p>
             <div>
-              <Link href="/talent" className="inline-block bg-blue-600 text-white text-[15px] font-[family-name:var(--font-poppins-custom)] font-medium px-8 py-3.5 rounded-sm hover:bg-blue-700 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+              <Link href="/contact" className="inline-block bg-blue-600 text-white text-[15px] font-[family-name:var(--font-poppins-custom)] font-medium px-8 py-3.5 rounded-sm hover:bg-blue-700 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
                 Hire top talent today
               </Link>
             </div>

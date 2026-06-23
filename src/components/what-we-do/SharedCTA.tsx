@@ -22,7 +22,13 @@ export default function SharedCTA({ roleTitle }: { roleTitle: string }) {
                 <div className="absolute -bottom-[30%] left-[20%] w-[70%] h-[80%] bg-[#38bdf8] rounded-[100%] opacity-40 blur-[100px] mix-blend-screen" />
             </div>
 
-            <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center flex flex-col items-center">
+            <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center flex flex-col items-center"
+            >
                 {/* Accent Dash & Dot */}
                 <div className="mb-6 relative w-12 h-10">
                     <div className="absolute top-1 right-2 w-[5px] h-[5px] rounded-full bg-white" />
@@ -43,7 +49,7 @@ export default function SharedCTA({ roleTitle }: { roleTitle: string }) {
                 >
                     Hire top talent
                 </Link>
-            </div>
+            </motion.div>
         </section>
     );
 }

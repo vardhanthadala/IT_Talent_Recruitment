@@ -48,7 +48,13 @@ export default function Clients() {
           
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-8 mb-10 md:mb-16">
             {/* Left side: Heading */}
-            <div className="w-full lg:w-5/12 flex flex-col justify-between">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="w-full lg:w-5/12 flex flex-col justify-between"
+            >
               <div>
                 <span className="text-[#0077b5] uppercase tracking-widest text-xs font-bold mb-4 md:mb-6 block">CLIENTS</span>
                 <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-poppins-custom)] font-bold text-gray-900 leading-[1.2] md:leading-[1.1] tracking-tight mb-6 md:mb-8">
@@ -65,7 +71,7 @@ export default function Clients() {
                   <ArrowRight className="w-6 h-6" />
                 </button>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right side: Testimonial Cards */}
             <div 
@@ -76,7 +82,11 @@ export default function Clients() {
               <style dangerouslySetInnerHTML={{__html: `::-webkit-scrollbar { display: none; }`}} />
               
               {testimonials.map((t, i) => (
-                <div 
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: 0.2 + (i * 0.15), ease: "easeOut" }}
                   key={i} 
                   className="w-full sm:w-[85%] md:w-[420px] bg-white rounded-[20px] p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] snap-center flex-shrink-0"
                 >
@@ -92,7 +102,7 @@ export default function Clients() {
                   <p className="text-[#111827] leading-[1.6] text-[15px] whitespace-normal">
                     {t.text}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
             
@@ -108,7 +118,13 @@ export default function Clients() {
           </div>
 
           {/* Bottom Logos Marquee */}
-          <div className="relative pt-6 mt-4 border-t border-gray-200/50 overflow-hidden w-full">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            className="relative pt-6 mt-4 border-t border-gray-200/50 overflow-hidden w-full"
+          >
             <style dangerouslySetInnerHTML={{__html: `
               @keyframes marqueeInfinite {
                 0% { transform: translateX(0%); }
@@ -150,7 +166,7 @@ export default function Clients() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
       </div>
     </section>

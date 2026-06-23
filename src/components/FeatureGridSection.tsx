@@ -43,7 +43,7 @@ export default function FeatureGridSection() {
                 Put your talents to use and apply your skills alongside uniquely talented people in a digital environment.
               </p>
               <Link
-                href="/careers"
+                href="/career2"
                 className="inline-block px-6 py-2.5 border border-[#0f172a] text-[#0f172a] text-[13px] font-[family-name:var(--font-poppins-custom)] font-medium hover:bg-[#0f172a] hover:text-white transition-all duration-300"
               >
                 explore openings
