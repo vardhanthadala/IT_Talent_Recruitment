@@ -30,7 +30,7 @@ export default function RoleOverview({ role }: { role: RoleDetails }) {
                                         <CheckCircle2 className="w-6 h-6 text-[#0077b5]" />
                                     </div>
                                     <p className="text-gray-700 leading-relaxed font-medium">
-                                        {resp}
+                                        <strong>{resp.title}:</strong> {resp.description}
                                     </p>
                                 </div>
                             ))}
