@@ -21,28 +21,16 @@ export default function HeroIndustry({ data }: { data: HeroData }) {
 
       {/* Large Image replacing the nodes, matching the home page style */}
       <div className="absolute top-0 right-0 w-full md:w-[60%] h-[50vh] md:h-full z-0 overflow-hidden">
-        {/* Unwarp Reveal Animation (Left to Right because it's on the right edge, so we can reveal it from left to right or just scale down an overlay) */}
-        <motion.div 
-          initial={{ x: "0%" }}
-          animate={{ x: "100%" }}
-          transition={{ duration: 1.5, ease: customEase }}
-          className="absolute inset-0 bg-[#161a1d] z-20 origin-right"
-        />
-        
-        <motion.div
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5, ease: customEase }}
-          className="w-full h-full relative"
-        >
+        <div className="w-full h-full relative">
           <Image
             src={data.image}
             alt={data.eyebrow}
             fill
+            sizes="(max-width: 768px) 100vw, 60vw"
             className="object-cover object-center"
             priority
           />
-        </motion.div>
+        </div>
         {/* Extra smooth gradient to blend the dark edge on desktop seamlessly */}
         <div className="hidden md:block absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#161a1d] via-[#161a1d]/90 to-transparent z-10"></div>
 
