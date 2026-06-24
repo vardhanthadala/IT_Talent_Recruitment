@@ -66,18 +66,24 @@ export default function HeroIndustry({ data }: { data: HeroData }) {
             </span>
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] font-[family-name:var(--font-poppins-custom)] font-bold text-white leading-[1.08] tracking-[-0.03em] mb-6">
-            <AnimatedText text={data.titleLine1} as="span" /> <br />
-            <AnimatedText text={data.titleLine2} as="span" className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#99f2d1]" delay={0.2} />
-          </h1>
+          <motion.h1 
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-[64px] font-[family-name:var(--font-poppins-custom)] font-bold text-white leading-[1.08] tracking-[-0.03em] mb-6"
+          >
+            {data.titleLine1} <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#99f2d1]">{data.titleLine2}</span>
+          </motion.h1>
           
-          <AnimatedText 
-            text={data.description}
-            as="p"
-            delay={0.4}
-            stagger={0.015}
+          <motion.p 
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="text-base sm:text-lg lg:text-[21px] font-[family-name:var(--font-poppins-custom)] font-light text-gray-300 mb-10 max-w-2xl leading-[1.6]"
-          />
+          >
+            {data.description}
+          </motion.p>
           
           <motion.div 
             initial={{ opacity: 0, y: 30 }}

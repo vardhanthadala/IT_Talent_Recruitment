@@ -2,36 +2,44 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const industries = [
     {
         title: "IT & Technology",
+        slug: "it-technology",
         image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
         title: "Finance & Banking",
+        slug: "finance-banking",
         image: "https://images.pexels.com/photos/259165/pexels-photo-259165.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
         title: "Healthcare & Life Sciences",
+        slug: "healthcare-life-sciences",
         image: "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
         title: "Manufacturing & Logistics",
+        slug: "manufacturing-logistics",
         image: "https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
         title: "Retail & E-commerce",
+        slug: "retail-ecommerce",
         image: "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
         title: "Professional Services",
+        slug: "professional-services",
         image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800"
     }
 ];
 
 export default function Services() {
     const [page, setPage] = useState(0);
+    const router = useRouter();
 
     // Auto-play the carousel to swap between the first 3 and the last 3
     useEffect(() => {
@@ -95,6 +103,7 @@ export default function Services() {
                             {currentIndustries.map((industry, index) => (
                                 <motion.div
                                     key={industry.title}
+                                    onClick={() => router.push(`/industries/${industry.slug}`)}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     className="relative w-full aspect-[4/5] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-500"
@@ -113,7 +122,7 @@ export default function Services() {
                                     </div>
 
                                     {/* Hover Arrow */}
-                                    <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-blue-600 transition-all duration-300">
                                         <ArrowUpRight className="text-white w-6 h-6" />
                                     </div>
                                 </motion.div>

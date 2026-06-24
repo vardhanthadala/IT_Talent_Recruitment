@@ -67,23 +67,23 @@ export default function SolutionsShowcase({ data }: { data: SolutionsData }) {
   const customEase = [0.22, 1, 0.36, 1] as const; // Smooth, agency-level easing
 
   return (
-    <section className="w-full bg-white py-20 md:py-32 overflow-hidden">
+    <section className="w-full bg-white py-16 md:py-24 overflow-hidden">
       <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-16 2xl:px-24">
         
-        <div className="text-center mb-20 md:mb-32 flex flex-col items-center">
+        <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: customEase }}
           >
-            <span className="text-[#0077b5] font-[family-name:var(--font-poppins-custom)] font-bold tracking-[0.2em] text-[13px] uppercase mb-4 block">
+            <span className="text-blue-600 font-[family-name:var(--font-poppins-custom)] font-bold tracking-[0.2em] text-[13px] uppercase mb-4 block">
               {data.eyebrow}
             </span>
           </motion.div>
           
-          <h2 className="text-[36px] md:text-[44px] lg:text-[52px] font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-6 tracking-tight leading-[1.2]">
-            <AnimatedText text={data.titleLine1} as="span" delay={0.1} /> <AnimatedText text={data.titleLine2} as="span" className="italic text-[#0077b5]" delay={0.3} />
+          <h2 className="text-3xl md:text-[48px] lg:text-[56px] font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-6 tracking-[-0.02em] leading-[1.1]">
+            <AnimatedText text={data.titleLine1} as="span" delay={0.1} /> <AnimatedText text={data.titleLine2} as="span" className="italic font-normal text-blue-600" delay={0.3} />
           </h2>
 
           <AnimatedText
@@ -91,7 +91,7 @@ export default function SolutionsShowcase({ data }: { data: SolutionsData }) {
             as="p"
             delay={0.5}
             stagger={0.02}
-            className="text-[16px] md:text-[18px] text-slate-500 font-light max-w-3xl leading-relaxed"
+            className="text-lg md:text-[20px] font-[family-name:var(--font-poppins-custom)] font-light text-gray-600 max-w-3xl leading-[1.6]"
           />
         </div>
 

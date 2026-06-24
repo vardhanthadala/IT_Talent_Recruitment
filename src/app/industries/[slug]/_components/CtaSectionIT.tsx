@@ -43,7 +43,7 @@ export default function CtaSection({ data }: { data: CtaData }) {
             viewport={{ once: true }}
             transition={{ duration: 1, ease: customEase }}
           >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-[family-name:var(--font-poppins-custom)] font-bold text-white mb-6 tracking-tight flex flex-col md:block items-center">
+          <h2 className="text-3xl md:text-[48px] lg:text-[56px] font-[family-name:var(--font-poppins-custom)] font-bold text-white mb-6 tracking-[-0.02em] leading-[1.1] flex flex-col md:block items-center">
             <AnimatedText text={data.titleLine1} as="span" /> <br className="md:hidden" /> <AnimatedText text={data.titleLine2} as="span" delay={0.2} />
           </h2>
           
@@ -52,7 +52,7 @@ export default function CtaSection({ data }: { data: CtaData }) {
             as="p"
             delay={0.4}
             stagger={0.02}
-            className="text-lg md:text-xl font-[family-name:var(--font-poppins-custom)] font-light text-gray-300 mb-10 max-w-2xl mx-auto"
+            className="text-lg md:text-[20px] font-[family-name:var(--font-poppins-custom)] font-light text-gray-300 mb-10 max-w-2xl mx-auto leading-[1.6]"
           />
 
           <Link 
