@@ -22,7 +22,7 @@ export default function AnimatedText({
 }: AnimatedTextProps) {
   // Split text into words, keeping spaces
   const words = text.split(" ");
-  const customEase = [0.22, 1, 0.36, 1];
+  const customEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
   const container = {
     hidden: { opacity: 0 },
