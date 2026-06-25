@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
 import AnimatedText from "@/components/AnimatedText";
 import DynamicIcon from "@/components/DynamicIcon";
 
@@ -120,10 +119,7 @@ export default function TechLandscape({ data }: { data: LandscapeData }) {
                   </p>
                 </div>
 
-                {/* Arrow Icon Indicator */}
-                <div className="absolute bottom-8 right-8 w-10 h-10 rounded-full bg-white text-blue-600 flex items-center justify-center opacity-0 translate-x-4 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100 group-hover:translate-x-0">
-                  <ArrowUpRight className="w-5 h-5" />
-                </div>
+
               </div>
             </motion.div>
           ))}

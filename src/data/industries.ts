@@ -57,7 +57,13 @@ export const industriesData = {
           description: "We engineer bespoke software applications tailored exactly to your operational workflows. From high-performance backend systems to intuitive consumer-facing interfaces, our full-stack teams deliver maintainable and scalable code.",
           visualFirst: true,
           icon: "Code2",
-          image: "/images/industries/it-software.jpg"
+          image: "/images/industries/it-software.jpg",
+          features: [
+            "Full-stack web and mobile application development",
+            "Agile methodology with continuous delivery",
+            "Scalable microservices architecture",
+            "Comprehensive automated testing and QA"
+          ]
         },
         {
           id: "cloud",
@@ -65,7 +71,13 @@ export const industriesData = {
           description: "Transition your legacy infrastructure into modern, cloud-native environments. We architect AWS, Azure, and GCP solutions that guarantee 99.9% uptime, infinite elasticity, and robust security protocols.",
           visualFirst: false,
           icon: "Cloud",
-          image: "/images/industries/it-cloud-solution.jpg"
+          image: "/images/industries/it-cloud-solution.jpg",
+          features: [
+            "Multi-cloud and hybrid infrastructure design",
+            "Serverless computing and container orchestration",
+            "Automated CI/CD deployment pipelines",
+            "24/7 proactive monitoring and maintenance"
+          ]
         },
         {
           id: "ai",
@@ -73,7 +85,13 @@ export const industriesData = {
           description: "Unlock the value of your data. We integrate advanced artificial intelligence and predictive modeling directly into your core business applications, enabling autonomous decision-making and unprecedented operational efficiency.",
           visualFirst: true,
           icon: "BrainCircuit",
-          image: "/images/industries/it-ai-solution.jpg"
+          image: "/images/industries/it-ai-solution.jpg",
+          features: [
+            "Predictive analytics and data modeling",
+            "Natural Language Processing (NLP) integration",
+            "Computer vision and pattern recognition",
+            "Custom LLM fine-tuning and deployment"
+          ]
         }
       ]
     },
@@ -140,7 +158,13 @@ export const industriesData = {
           description: "We help traditional financial institutions decouple from monolithic legacy systems, implementing microservices-driven architectures that enable rapid feature deployment and superior operational resilience.",
           visualFirst: true,
           icon: "Landmark",
-          image: "/images/industries/finance-core.jpg"
+          image: "/images/industries/finance-core.jpg",
+          features: [
+            "Microservices architecture for decoupled operations",
+            "Zero-downtime migration from legacy mainframes",
+            "Real-time transactional processing capabilities",
+            "Automated regulatory reporting pipelines"
+          ]
         },
         {
           id: "fintech-dev",
@@ -148,7 +172,13 @@ export const industriesData = {
           description: "From digital wallets to advanced robo-advisors, our engineering teams build scalable fintech products from the ground up, focusing on intuitive UX and institutional-grade security.",
           visualFirst: false,
           icon: "Code2",
-          image: "/images/industries/finance-dev.jpg"
+          image: "/images/industries/finance-dev.jpg",
+          features: [
+            "Secure digital wallet and payment gateway integration",
+            "Blockchain and smart contract development",
+            "Automated wealth management platforms",
+            "PCI-DSS compliant infrastructure"
+          ]
         },
         {
           id: "fraud-ai",
@@ -156,7 +186,13 @@ export const industriesData = {
           description: "Deploying advanced machine learning models that analyze transactional behavior in real-time to identify anomalies, prevent fraud, and reduce false positives across payment networks.",
           visualFirst: true,
           icon: "ShieldCheck",
-          image: "/images/industries/finance-ai.jpg"
+          image: "/images/industries/finance-ai.jpg",
+          features: [
+            "Real-time transaction monitoring and scoring",
+            "Behavioral biometrics and anomaly detection",
+            "Automated alert triage and resolution",
+            "Integration with global threat intelligence"
+          ]
         }
       ]
     },
@@ -223,7 +259,13 @@ export const industriesData = {
           description: "We engineer software for connected medical devices (IoMT), ensuring secure data transmission, real-time monitoring, and seamless integration with existing clinical workflows.",
           visualFirst: true,
           icon: "HeartPulse",
-          image: "/images/industries/health-medtech.jpg"
+          image: "/images/industries/health-medtech.jpg",
+          features: [
+            "IoMT device connectivity and data streaming",
+            "Remote patient monitoring dashboards",
+            "FDA/CE compliant software development",
+            "End-to-end data encryption and HIPAA compliance"
+          ]
         },
         {
           id: "data-interop",
@@ -231,7 +273,13 @@ export const industriesData = {
           description: "Breaking down data silos in healthcare. We implement FHIR and HL7 standards to create unified data ecosystems that allow providers to access comprehensive patient histories instantly.",
           visualFirst: false,
           icon: "Cloud",
-          image: "/images/industries/health-data.jpg"
+          image: "/images/industries/health-data.jpg",
+          features: [
+            "FHIR and HL7 v2/v3 standard integrations",
+            "Unified patient record data lakes",
+            "Secure API gateways for health data exchange",
+            "Legacy EHR system modernization"
+          ]
         },
         {
           id: "ai-diagnostics",
@@ -239,7 +287,13 @@ export const industriesData = {
           description: "Integrating computer vision and machine learning models to assist radiologists and clinicians in analyzing medical imaging, improving diagnostic speed and accuracy.",
           visualFirst: true,
           icon: "BrainCircuit",
-          image: "/images/industries/health-ai.jpg"
+          image: "/images/industries/health-ai.jpg",
+          features: [
+            "Medical imaging analysis (X-ray, MRI, CT)",
+            "Clinical decision support algorithms",
+            "Automated preliminary screening tools",
+            "Continuous model training with clinical feedback"
+          ]
         }
       ]
     },
@@ -306,7 +360,13 @@ export const industriesData = {
           description: "We engineer scalable IoT architectures that aggregate data from thousands of sensors across your manufacturing floor, turning raw telemetry into actionable operational insights.",
           visualFirst: true,
           icon: "Cloud",
-          image: "/images/industries/manufacturing-iot.jpg"
+          image: "/images/industries/manufacturing-iot.jpg",
+          features: [
+            "High-throughput MQTT telemetry ingestion",
+            "Edge computing for real-time local processing",
+            "Digital twin visualization environments",
+            "Automated alerting and predictive maintenance"
+          ]
         },
         {
           id: "supply-chain",
@@ -314,7 +374,13 @@ export const industriesData = {
           description: "Developing end-to-end tracking platforms that provide real-time visibility into global logistics, utilizing blockchain and advanced APIs to ensure data integrity and transparency.",
           visualFirst: false,
           icon: "Globe",
-          image: "/images/industries/manufacturing-supply.jpg"
+          image: "/images/industries/manufacturing-supply.jpg",
+          features: [
+            "End-to-end freight and asset tracking",
+            "Blockchain-based origin verification",
+            "Dynamic route optimization algorithms",
+            "Automated inventory reconciliation"
+          ]
         },
         {
           id: "automation-ai",
@@ -322,7 +388,13 @@ export const industriesData = {
           description: "Deploying machine learning models to optimize production schedules, manage energy consumption, and automate quality assurance through industrial computer vision.",
           visualFirst: true,
           icon: "BrainCircuit",
-          image: "/images/industries/manufacturing-ai.jpg"
+          image: "/images/industries/manufacturing-ai.jpg",
+          features: [
+            "Computer vision for automated quality assurance",
+            "Demand forecasting and inventory optimization",
+            "Energy consumption modeling and reduction",
+            "Robotic Process Automation (RPA) for logistics"
+          ]
         }
       ]
     },
@@ -389,7 +461,13 @@ export const industriesData = {
           description: "Decoupling the frontend experience from the backend engine. We build highly performant headless platforms using Next.js and React, resulting in sub-second page loads and higher conversions.",
           visualFirst: true,
           icon: "Code2",
-          image: "/images/industries/retail-headless.jpg"
+          image: "/images/industries/retail-headless.jpg",
+          features: [
+            "Decoupled frontend for lightning-fast UX",
+            "Integration with Shopify Plus, BigCommerce, or Custom Backend",
+            "Progressive Web App (PWA) capabilities",
+            "Global CDN deployment and edge caching"
+          ]
         },
         {
           id: "personalization",
@@ -397,7 +475,13 @@ export const industriesData = {
           description: "Implementing recommendation engines and predictive algorithms that analyze user behavior in real-time to deliver hyper-personalized product suggestions and dynamic pricing.",
           visualFirst: false,
           icon: "BrainCircuit",
-          image: "/images/industries/retail-personalization.jpg"
+          image: "/images/industries/retail-personalization.jpg",
+          features: [
+            "Real-time user behavior tracking and segmentation",
+            "Collaborative filtering for product recommendations",
+            "Dynamic pricing and discount optimization",
+            "Automated personalized marketing campaigns"
+          ]
         },
         {
           id: "pos-integration",
@@ -405,7 +489,13 @@ export const industriesData = {
           description: "Engineering custom POS integrations that sync offline retail operations with online inventory in real-time, enabling true 'buy online, pick up in-store' (BOPIS) capabilities.",
           visualFirst: true,
           icon: "ShoppingCart",
-          image: "/images/industries/retail-pos.jpg"
+          image: "/images/industries/retail-pos.jpg",
+          features: [
+            "Real-time offline/online inventory synchronization",
+            "Unified customer profiles and loyalty programs",
+            "Seamless BOPIS (Buy Online, Pick Up In-Store) workflows",
+            "Custom hardware integrations and mobile POS"
+          ]
         }
       ]
     },
@@ -472,7 +562,13 @@ export const industriesData = {
           description: "We replace fragmented SaaS tools with cohesive, custom-built enterprise platforms designed precisely around your firm's operational model and security requirements.",
           visualFirst: true,
           icon: "Code2",
-          image: "/images/industries/professional-software.jpg"
+          image: "/images/industries/professional-software.jpg",
+          features: [
+            "Bespoke ERP and Practice Management systems",
+            "Secure, white-labeled client collaboration portals",
+            "Integration with existing legacy databases",
+            "Role-based access control and comprehensive audit trails"
+          ]
         },
         {
           id: "workflow-automation",
@@ -480,7 +576,13 @@ export const industriesData = {
           description: "Leveraging AI and robotic process automation (RPA) to handle repetitive administrative tasks, from data entry and document classification to automated compliance reporting.",
           visualFirst: false,
           icon: "Activity",
-          image: "/images/industries/professional-workflow.jpg"
+          image: "/images/industries/professional-workflow.jpg",
+          features: [
+            "Automated document generation and review pipelines",
+            "Smart optical character recognition (OCR) for data entry",
+            "Approval routing and task assignment automation",
+            "Integration with CRM and accounting platforms"
+          ]
         },
         {
           id: "data-security",
@@ -488,7 +590,13 @@ export const industriesData = {
           description: "Implementing zero-trust security architectures, end-to-end encryption, and comprehensive audit logging to protect highly sensitive client data and intellectual property.",
           visualFirst: true,
           icon: "ShieldCheck",
-          image: "/images/industries/professional-security.jpg"
+          image: "/images/industries/professional-security.jpg",
+          features: [
+            "Zero-trust network architectures",
+            "End-to-end encryption for documents and communications",
+            "Automated compliance and governance reporting",
+            "Continuous vulnerability scanning and penetration testing"
+          ]
         }
       ]
     },

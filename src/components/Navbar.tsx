@@ -90,28 +90,36 @@ export default function Navbar() {
                         {link.name === "What We Do" && (
                           <>
                             {/* Icons row with connecting dotted line */}
-                            <div className="flex items-center justify-between mb-6 relative">
+                            <div className="grid grid-cols-4 gap-8 w-full mb-6 relative">
                               {/* Dotted connecting line */}
-                              <div className="absolute top-1/2 left-[10%] right-[10%] h-[1px] border-t border-dashed border-gray-300 -z-10"></div>
+                              <div className="absolute top-1/2 left-4 right-[25%] h-[1px] border-t border-dashed border-gray-300 -z-10"></div>
                               
                               {/* Column 1 Icon (Development) */}
-                              <div className="w-10 h-10 flex items-center justify-center text-black z-10 relative bg-white">
-                                <Code className="w-6 h-6" strokeWidth={1.5} />
+                              <div className="flex justify-start">
+                                <div className="w-auto pr-4 flex items-center text-black z-10 relative bg-white">
+                                  <Code className="w-6 h-6" strokeWidth={1.5} />
+                                </div>
                               </div>
                               
                               {/* Column 2 Icon (Testing) */}
-                              <div className="w-10 h-10 flex items-center justify-center text-black z-10 relative bg-white">
-                                <ShieldCheck className="w-6 h-6" strokeWidth={1.5} />
+                              <div className="flex justify-start">
+                                <div className="w-auto pr-4 flex items-center text-black z-10 relative bg-white">
+                                  <ShieldCheck className="w-6 h-6" strokeWidth={1.5} />
+                                </div>
                               </div>
                               
                               {/* Column 3 Icon (Operations) */}
-                              <div className="w-10 h-10 flex items-center justify-center text-black z-10 relative bg-white">
-                                <Server className="w-6 h-6" strokeWidth={1.5} />
+                              <div className="flex justify-start">
+                                <div className="w-auto pr-4 flex items-center text-black z-10 relative bg-white">
+                                  <Server className="w-6 h-6" strokeWidth={1.5} />
+                                </div>
                               </div>
 
                               {/* Column 4 Icon (AI & Data) */}
-                              <div className="w-10 h-10 flex items-center justify-center text-black z-10 relative bg-white">
-                                <BrainCircuit className="w-6 h-6" strokeWidth={1.5} />
+                              <div className="flex justify-start">
+                                <div className="w-auto pr-4 flex items-center text-black z-10 relative bg-white">
+                                  <BrainCircuit className="w-6 h-6" strokeWidth={1.5} />
+                                </div>
                               </div>
                             </div>
                             

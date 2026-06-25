@@ -279,6 +279,7 @@ export default function ContactClient() {
                                                     <option value="" disabled>Select a reason...</option>
                                                     <option value="it_services">I need IT Services</option>
                                                     <option value="hire_talent">I want to Hire Talent</option>
+                                                    <option value="it_training">For IT Training</option>
                                                     <option value="other">General Inquiry</option>
                                                 </select>
                                                 <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
