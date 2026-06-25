@@ -1,28 +1,29 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Atom } from "lucide-react";
 import { FaXTwitter, FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const FOOTER_LINKS = {
   services: [
-    { name: "Software Engineering", href: "#" },
-    { name: "Data & AI", href: "#" },
-    { name: "Cloud & DevOps", href: "#" },
-    { name: "Product Design", href: "#" },
-    { name: "Managed Teams", href: "#" },
+    { name: "Development", href: "#" },
+    { name: "Testing & QA", href: "#" },
+    { name: "Operations", href: "#" },
+    { name: "AI & Data", href: "#" },
   ],
   industries: [
-    { name: "Healthcare & Life Sciences", href: "#" },
-    { name: "Finance & Fintech", href: "#" },
-    { name: "Automotive & Mobility", href: "#" },
-    { name: "Energy & Utilities", href: "#" },
-    { name: "Retail & E-commerce", href: "#" },
+    { name: "IT & Technology", href: "/industries/it-technology" },
+    { name: "Finance & Banking", href: "/industries/finance-banking" },
+    { name: "Healthcare & Life Sciences", href: "/industries/healthcare-life-sciences" },
+    { name: "Manufacturing & Logistics", href: "/industries/manufacturing-logistics" },
+    { name: "Retail & E-commerce", href: "/industries/retail-ecommerce" },
+    { name: "Professional Services", href: "/industries/professional-services" },
   ],
   company: [
-    { name: "About Us", href: "#" },
+    { name: "About Us", href: "/about" },
     { name: "Our Process", href: "#" },
     { name: "Internal Careers", href: "#" },
-    { name: "Contact Us", href: "#" },
-    { name: "Careers", href: "#" },
+    { name: "Contact Us", href: "/contact" },
+    { name: "Careers", href: "/career2" },
   ],
   connect: [
     { name: "LinkedIn", href: "#", icon: FaLinkedin, hoverColor: "group-hover:text-[#0077B5]" },
@@ -43,7 +44,7 @@ export default function Footer() {
           {/* Left Column: Brand & CTA */}
           <div className="flex flex-col items-start w-full lg:w-[40%]">
             <Link href="/" className="flex items-center mb-10 min-h-[40px] min-w-[150px]">
-              {/* TODO: Add your logo <Image /> here later */}
+              <Image src="/images/sreehisoft-logo.png" alt="Sreehisoft Solutions Logo" width={180} height={48} className="object-contain" priority />
             </Link>
 
             <h2 className="text-3xl md:text-4xl font-[family-name:var(--font-poppins-custom)] font-medium text-[#0f172a] leading-[1.2] tracking-tight mb-8 max-w-sm">
@@ -62,7 +63,7 @@ export default function Footer() {
           </div>
 
           {/* Right Column: Links Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full lg:w-[60%]">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 w-full lg:w-[60%]">
 
             <div>
               <h4 className="text-[#0f172a] font-[family-name:var(--font-poppins-custom)] font-semibold mb-6">Services</h4>
@@ -81,19 +82,6 @@ export default function Footer() {
               <h4 className="text-[#0f172a] font-[family-name:var(--font-poppins-custom)] font-semibold mb-6">Industries</h4>
               <ul className="flex flex-col gap-4">
                 {FOOTER_LINKS.industries.map((link) => (
-                  <li key={link.name}>
-                    <Link href={link.href} className="text-gray-500 hover:text-blue-600 text-[14px] font-[family-name:var(--font-poppins-custom)] transition-colors">
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-[#0f172a] font-[family-name:var(--font-poppins-custom)] font-semibold mb-6">Company</h4>
-              <ul className="flex flex-col gap-4">
-                {FOOTER_LINKS.company.map((link) => (
                   <li key={link.name}>
                     <Link href={link.href} className="text-gray-500 hover:text-blue-600 text-[14px] font-[family-name:var(--font-poppins-custom)] transition-colors">
                       {link.name}

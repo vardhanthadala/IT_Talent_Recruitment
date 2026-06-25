@@ -52,7 +52,7 @@ export default function Navbar() {
             {/* Logo Section */}
             <div className="flex-shrink-0 flex items-center w-auto lg:w-1/4">
               <Link href="/" className="flex items-center gap-2 group">
-                {/* Place your logo Image component here later */}
+                <Image src="/images/sreehisoft-logo.png" alt="Sreehisoft Solutions" width={150} height={40} className="w-auto h-8 md:h-10 object-contain" priority />
               </Link>
             </div>
 
@@ -309,7 +309,7 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
           <Link href="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
-            <Image src="/logos/Rolvatech_logo.png" alt="Sreehisoft Solutions" width={150} height={40} className="w-auto h-8" priority />
+            <Image src="/images/sreehisoft-logo.png" alt="Sreehisoft Solutions" width={150} height={40} className="w-auto h-8 object-contain" priority />
           </Link>
           <button
             onClick={() => setIsOpen(false)}
