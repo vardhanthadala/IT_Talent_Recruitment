@@ -19,66 +19,66 @@ import {
     SiApple
 } from "react-icons/si";
 
-const TECH_ICON_MAP: Record<string, { icon?: any, color: string, slug?: string }> = {
+const TECH_ICON_MAP: Record<string, { icon?: any, color: string, slug?: string, devicon?: string }> = {
     // Cloud & DevOps
-    "AWS": { icon: FaAws, color: "#232F3E" },
-    "Microsoft Azure": { icon: FaMicrosoft, color: "#0078D4" },
-    "Google Cloud": { icon: SiGooglecloud, color: "#4285F4" },
-    "Kubernetes": { icon: SiKubernetes, color: "#326CE5" },
-    "Linux": { icon: SiLinux, color: "#FCC624" },
-    "Linux (RHEL/Ubuntu)": { icon: SiLinux, color: "#FCC624" },
-    "Docker": { icon: SiDocker, color: "#2496ED" },
-    "Terraform": { icon: SiTerraform, color: "#844FBA" },
-    "Ansible": { icon: SiAnsible, color: "#EE0000" },
-    "Jenkins": { icon: SiJenkins, color: "#D24939" },
-    "GitLab CI": { icon: SiGithub, color: "#FCA121" },
+    "AWS": { icon: FaAws, color: "#232F3E", devicon: "amazonwebservices-plain-wordmark colored" },
+    "Microsoft Azure": { icon: FaMicrosoft, color: "#0078D4", devicon: "azure-plain colored" },
+    "Google Cloud": { icon: SiGooglecloud, color: "#4285F4", devicon: "googlecloud-plain colored" },
+    "Kubernetes": { icon: SiKubernetes, color: "#326CE5", devicon: "kubernetes-plain colored" },
+    "Linux": { icon: SiLinux, color: "#FCC624", devicon: "linux-plain colored" },
+    "Linux (RHEL/Ubuntu)": { icon: SiLinux, color: "#FCC624", devicon: "ubuntu-plain colored" },
+    "Docker": { icon: SiDocker, color: "#2496ED", devicon: "docker-plain colored" },
+    "Terraform": { icon: SiTerraform, color: "#844FBA", devicon: "terraform-plain colored" },
+    "Ansible": { icon: SiAnsible, color: "#EE0000", devicon: "ansible-plain colored" },
+    "Jenkins": { icon: SiJenkins, color: "#D24939", devicon: "jenkins-plain colored" },
+    "GitLab CI": { icon: SiGithub, color: "#FCA121", devicon: "gitlab-plain colored" },
 
     // Frontend
-    "React": { icon: SiReact, color: "#61DAFB" },
-    "Next.js": { icon: SiNextdotjs, color: "#000000" },
-    "React Native": { icon: SiReact, color: "#61DAFB" },
-    "Vue.js": { icon: SiVuedotjs, color: "#4FC08D" },
-    "Angular": { icon: SiAngular, color: "#DD0031" },
-    "TypeScript": { icon: SiTypescript, color: "#3178C6" },
-    "Tailwind CSS": { icon: SiTailwindcss, color: "#06B6D4" },
-    "MERN Stack": { icon: SiReact, color: "#61DAFB" },
-    "MEAN Stack": { icon: SiAngular, color: "#DD0031" },
-    "Flutter": { icon: SiFlutter, color: "#02569B" },
+    "React": { icon: SiReact, color: "#61DAFB", devicon: "react-original colored" },
+    "Next.js": { icon: SiNextdotjs, color: "#000000", devicon: "nextjs-plain" },
+    "React Native": { icon: SiReact, color: "#61DAFB", devicon: "react-original colored" },
+    "Vue.js": { icon: SiVuedotjs, color: "#4FC08D", devicon: "vuejs-plain colored" },
+    "Angular": { icon: SiAngular, color: "#DD0031", devicon: "angularjs-plain colored" },
+    "TypeScript": { icon: SiTypescript, color: "#3178C6", devicon: "typescript-plain colored" },
+    "Tailwind CSS": { icon: SiTailwindcss, color: "#06B6D4", devicon: "tailwindcss-plain colored" },
+    "MERN Stack": { icon: SiReact, color: "#61DAFB", devicon: "react-original colored" },
+    "MEAN Stack": { icon: SiAngular, color: "#DD0031", devicon: "angularjs-plain colored" },
+    "Flutter": { icon: SiFlutter, color: "#02569B", devicon: "flutter-plain colored" },
 
     // Backend & Languages
-    "Node.js": { icon: SiNodedotjs, color: "#339933" },
-    "Python": { icon: SiPython, color: "#3776AB" },
-    "Java": { icon: FaJava, color: "#007396" },
-    "Go": { icon: SiGo, color: "#00ADD8" },
-    "Ruby on Rails": { icon: SiRubyonrails, color: "#CC0000" },
-    "Django": { icon: SiDjango, color: "#092E20" },
-    "Spring Boot": { icon: SiSpringboot, color: "#6DB33F" },
-    "GraphQL": { icon: SiGraphql, color: "#E10098" },
-    "Swift": { icon: SiSwift, color: "#F05138" },
-    "Kotlin": { icon: SiKotlin, color: "#7F52FF" },
-    "Objective-C": { icon: SiApple, color: "#000000" },
+    "Node.js": { icon: SiNodedotjs, color: "#339933", devicon: "nodejs-plain colored" },
+    "Python": { icon: SiPython, color: "#3776AB", devicon: "python-plain colored" },
+    "Java": { icon: FaJava, color: "#007396", devicon: "java-plain colored" },
+    "Go": { icon: SiGo, color: "#00ADD8", devicon: "go-plain colored" },
+    "Ruby on Rails": { icon: SiRubyonrails, color: "#CC0000", devicon: "rails-plain colored" },
+    "Django": { icon: SiDjango, color: "#092E20", devicon: "django-plain colored" },
+    "Spring Boot": { icon: SiSpringboot, color: "#6DB33F", devicon: "spring-plain colored" },
+    "GraphQL": { icon: SiGraphql, color: "#E10098", devicon: "graphql-plain colored" },
+    "Swift": { icon: SiSwift, color: "#F05138", devicon: "swift-plain colored" },
+    "Kotlin": { icon: SiKotlin, color: "#7F52FF", devicon: "kotlin-plain colored" },
+    "Objective-C": { icon: SiApple, color: "#000000", devicon: "objectivec-plain colored" },
 
     // Database
-    "PostgreSQL": { icon: SiPostgresql, color: "#4169E1" },
-    "MongoDB": { icon: SiMongodb, color: "#47A248" },
-    "SQL": { icon: SiPostgresql, color: "#4169E1" },
+    "PostgreSQL": { icon: SiPostgresql, color: "#4169E1", devicon: "postgresql-plain colored" },
+    "MongoDB": { icon: SiMongodb, color: "#47A248", devicon: "mongodb-plain colored" },
+    "SQL": { icon: SiPostgresql, color: "#4169E1", devicon: "postgresql-plain colored" },
 
     // AI & Data
-    "TensorFlow": { icon: SiTensorflow, color: "#FF6F00" },
-    "PyTorch": { icon: SiPytorch, color: "#EE4C2C" },
+    "TensorFlow": { icon: SiTensorflow, color: "#FF6F00", devicon: "tensorflow-original colored" },
+    "PyTorch": { icon: SiPytorch, color: "#EE4C2C", devicon: "pytorch-original colored" },
     "Datadog": { icon: SiDatadog, color: "#632CA6" },
 
     // Design
-    "Figma": { icon: SiFigma, color: "#F24E1E" },
+    "Figma": { icon: SiFigma, color: "#F24E1E", devicon: "figma-plain colored" },
     "Framer": { icon: SiFramer, color: "#0055FF" },
-    "Sketch": { icon: SiSketch, color: "#F7B500" },
+    "Sketch": { icon: SiSketch, color: "#F7B500", devicon: "sketch-plain colored" },
     "InVision": { icon: SiInvision, color: "#FF3366" },
-    "Adobe XD": { slug: "adobexd", color: "#FF61F6" },
-    "Illustrator": { slug: "adobeillustrator", color: "#FF9A00" },
+    "Adobe XD": { slug: "adobexd", color: "#FF61F6", devicon: "xd-plain colored" },
+    "Illustrator": { slug: "adobeillustrator", color: "#FF9A00", devicon: "illustrator-plain colored" },
 
     // Testing & Tools
-    "Jira": { icon: SiJira, color: "#0052CC" },
-    "Selenium": { icon: SiSelenium, color: "#43B02A" },
+    "Jira": { icon: SiJira, color: "#0052CC", devicon: "jira-plain colored" },
+    "Selenium": { icon: SiSelenium, color: "#43B02A", devicon: "selenium-original colored" },
     "Cypress": { icon: SiCypress, color: "#17202C" },
     "TestRail": { icon: SiJira, color: "#0052CC" },
     "Appium": { icon: SiAppium, color: "#660066" },
@@ -87,7 +87,7 @@ const TECH_ICON_MAP: Record<string, { icon?: any, color: string, slug?: string }
     "JMeter": { icon: SiApachejmeter, color: "#D22128" },
     "Gatling": { icon: SiGatling, color: "#FF9900" },
     "k6": { icon: SiK6, color: "#7D64FF" },
-    "Playwright": { slug: "playwright", color: "#2EAD33" },
+    "Playwright": { slug: "playwright", color: "#2EAD33", devicon: "playwright-plain colored" },
     "TestNG": { slug: "testng", color: "#E03D3D" },
     "Bugzilla": { slug: "bugzilla", color: "#DB181B" },
     "BrowserStack": { slug: "browserstack", color: "#0073B2" },
@@ -147,9 +147,9 @@ const getTechIconData = (techName: string) => {
     if (t.includes('looker')) return { slug: "looker", color: "#4285F4" };
     if (t.includes('qlik')) return { slug: "qlik", color: "#009845" };
     if (t.includes('ssas') || t.includes('dax') || t.includes('ssis')) return { slug: "microsoftsqlserver", color: "#CC292B" };
-    if (t.includes('spark')) return { slug: "apachespark", color: "#E25A1C" };
-    if (t.includes('hadoop')) return { slug: "apachehadoop", color: "#FFFE38" };
-    if (t.includes('kafka')) return { slug: "apachekafka", color: "#231F20" };
+    if (t.includes('spark')) return { slug: "apachespark", color: "#E25A1C", devicon: "apachespark-original colored" };
+    if (t.includes('hadoop')) return { slug: "apachehadoop", color: "#FFFE38", devicon: "hadoop-plain colored" };
+    if (t.includes('kafka')) return { slug: "apachekafka", color: "#231F20", devicon: "apachekafka-original colored" };
     if (t.includes('airflow')) return { slug: "apacheairflow", color: "#017CEE" };
     if (t.includes('snowflake')) return { slug: "snowflake", color: "#29B5E8" };
     if (t.includes('databricks')) return { slug: "databricks", color: "#FF3621" };
@@ -168,10 +168,10 @@ const getTechIconData = (techName: string) => {
     if (t.includes('ehr') || t.includes('epidemiology') || t.includes('survival') || t.includes('propensity') || t.includes('causal')) return { icon: FiActivity, color: "#47A248" };
     if (t.includes('nca') || t.includes('differential') || t.includes('pharmacokinetics') || t.includes('pharmacodynamics')) return { icon: FiActivity, color: "#E97627" };
 
-    if (t === 'r') return { slug: "r", color: "#276DC3" };
-    if (t.includes('jupyter')) return { slug: "jupyter", color: "#F37626" };
-    if (t.includes('pandas')) return { slug: "pandas", color: "#150458" };
-    if (t.includes('scikit')) return { slug: "scikitlearn", color: "#F7931E" };
+    if (t === 'r') return { slug: "r", color: "#276DC3", devicon: "r-original colored" };
+    if (t.includes('jupyter')) return { slug: "jupyter", color: "#F37626", devicon: "jupyter-plain colored" };
+    if (t.includes('pandas')) return { slug: "pandas", color: "#150458", devicon: "pandas-original colored" };
+    if (t.includes('scikit')) return { slug: "scikitlearn", color: "#F7931E", devicon: "scikitlearn-original colored" };
     if (t.includes('cuda')) return { slug: "nvidia", color: "#76B900" };
     if (t.includes('hugging')) return { slug: "huggingface", color: "#FFD21E" };
     if (t.includes('burp')) return { slug: "burpsuite", color: "#EA6D00" };
@@ -278,7 +278,9 @@ export default function TechStack({ role }: { role: RoleDetails }) {
                                 <div
                                     className="flex items-center gap-4 cursor-pointer transition-all duration-300"
                                 >
-                                    {iconData.slug ? (
+                                    {iconData.devicon ? (
+                                        <i className={`devicon-${iconData.devicon} text-[40px] md:text-[48px] transition-transform duration-300 group-hover:scale-110`}></i>
+                                    ) : iconData.slug ? (
                                         <img
                                             src={`https://cdn.simpleicons.org/${iconData.slug}/${iconData.color.replace('#', '')}`}
                                             alt={techName}
