@@ -83,7 +83,11 @@ export default function WhatWeDeliver({ role }: { role: RoleDetails }) {
             viewport={{ once: true }}
             className="text-3xl md:text-[48px] lg:text-[56px] font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] tracking-[-0.02em] leading-[1.1]"
           >
-            What we <span className="font-normal italic text-blue-600">deliver</span>
+            {role.category === "IT Training" ? (
+              <>What you'll <span className="font-normal italic text-blue-600">learn</span></>
+            ) : (
+              <>What we <span className="font-normal italic text-blue-600">deliver</span></>
+            )}
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, x: 20 }}
@@ -91,7 +95,11 @@ export default function WhatWeDeliver({ role }: { role: RoleDetails }) {
             viewport={{ once: true }}
             className="max-w-lg text-slate-500 text-[15px] leading-relaxed"
           >
-            With the right tools, methodologies, and a <span className="text-blue-600 font-medium">human-centered approach</span>, you can build products your customers will love. Here's how we help.
+            {role.category === "IT Training" ? (
+              <>Master the exact tools, methodologies, and <span className="text-blue-600 font-medium">industry-standard practices</span> required to excel in your career. Here's our comprehensive curriculum.</>
+            ) : (
+              <>With the right tools, methodologies, and a <span className="text-blue-600 font-medium">human-centered approach</span>, you can build products your customers will love. Here's how we help.</>
+            )}
           </motion.p>
         </div>
 

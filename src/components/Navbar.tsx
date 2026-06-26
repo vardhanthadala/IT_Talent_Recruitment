@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Smartphone, Globe, BarChart, Cloud, ChevronDown, Cpu, Lightbulb, Settings, Compass, BrainCircuit, Layers, Users, Code, ShieldCheck, Server, Laptop, Landmark, HeartPulse, Factory, ShoppingCart, Briefcase } from "lucide-react";
+import { Menu, X, Smartphone, Globe, BarChart, Cloud, ChevronDown, Cpu, Lightbulb, Settings, Compass, BrainCircuit, Layers, Users, Code, ShieldCheck, Server, Laptop, Landmark, HeartPulse, Factory, ShoppingCart, Briefcase, GraduationCap } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +61,7 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <div
                   key={link.name}
-                  className="relative h-full flex items-center group"
+                  className={`${link.hasMegaMenu ? '' : 'relative'} h-full flex items-center group`}
                   onMouseEnter={() => link.hasMegaMenu && setActiveMenu(link.name)}
                   onMouseLeave={() => link.hasMegaMenu && setActiveMenu(null)}
                 >
@@ -84,15 +84,19 @@ export default function Navbar() {
 
                   {/* Mega Menu Dropdown */}
                   {link.hasMegaMenu && activeMenu === link.name && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-[95vw] max-w-5xl cursor-default pt-4 z-50">
+                    <div className={`absolute top-full cursor-default pt-4 z-50 left-1/2 -translate-x-1/2 ${
+                      link.name === 'Industries' 
+                        ? 'w-[95vw] max-w-5xl' 
+                        : 'w-[95vw] max-w-7xl'
+                    }`}>
                       <div className="bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 p-8 flex flex-col">
                         
                         {link.name === "What We Do" && (
                           <>
                             {/* Icons row with connecting dotted line */}
-                            <div className="grid grid-cols-4 gap-8 w-full mb-6 relative">
+                            <div className="grid grid-cols-5 gap-8 w-full mb-6 relative">
                               {/* Dotted connecting line */}
-                              <div className="absolute top-1/2 left-4 right-[25%] h-[1px] border-t border-dashed border-gray-300 -z-10"></div>
+                              <div className="absolute top-1/2 left-4 right-[20%] h-[1px] border-t border-dashed border-gray-300 -z-10"></div>
                               
                               {/* Column 1 Icon (Development) */}
                               <div className="flex justify-start">
@@ -121,10 +125,17 @@ export default function Navbar() {
                                   <BrainCircuit className="w-6 h-6" strokeWidth={1.5} />
                                 </div>
                               </div>
+                              
+                              {/* Column 5 Icon (Training) */}
+                              <div className="flex justify-start">
+                                <div className="w-auto pr-4 flex items-center text-black z-10 relative bg-white">
+                                  <GraduationCap className="w-6 h-6" strokeWidth={1.5} />
+                                </div>
+                              </div>
                             </div>
                             
                             {/* Lists row */}
-                            <div className="grid grid-cols-4 gap-8 w-full">
+                            <div className="grid grid-cols-5 gap-8 w-full">
                               {/* Development */}
                               <div>
                                 <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-4 uppercase text-[13px] tracking-wide">Development</h3>
@@ -209,6 +220,28 @@ export default function Navbar() {
                                   </li>
                                   <li>
                                     <Link href="/what-we-do/bi-developers" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors">Business Intelligence</Link>
+                                  </li>
+                                </ul>
+                              </div>
+                              
+                              {/* IT Training and Placement */}
+                              <div>
+                                <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-4 uppercase text-[13px] tracking-wide whitespace-nowrap">IT Training</h3>
+                                <ul className="space-y-3">
+                                  <li>
+                                    <Link href="/what-we-do/clinical-sas-training" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">Clinical SAS Training</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="/what-we-do/r-for-clinical-trials" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">R for Clinical Trials</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="/what-we-do/python-for-clinical-data-science" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">Python for Clinical Data Science</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="/what-we-do/r-for-real-world-evidence" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">R for Real-World Evidence (RWE)</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="/what-we-do/pk-pd-modeling-pharmacometrics" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">PK/PD Modeling & Pharmacometrics</Link>
                                   </li>
                                 </ul>
                               </div>

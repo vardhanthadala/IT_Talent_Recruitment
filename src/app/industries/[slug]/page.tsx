@@ -30,7 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function IndustryPage({ params }: Props) {
   const resolvedParams = await params;
-  const data = industriesData[resolvedParams.slug as keyof typeof industriesData];
+  const slug = resolvedParams.slug;
+  const data = industriesData[slug as keyof typeof industriesData];
 
   if (!data) {
     notFound();

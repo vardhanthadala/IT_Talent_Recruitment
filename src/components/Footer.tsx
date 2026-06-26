@@ -9,6 +9,8 @@ const FOOTER_LINKS = {
     { name: "Testing & QA", href: "#" },
     { name: "Operations", href: "#" },
     { name: "AI & Data", href: "#" },
+    { name: "IT Services", href: "#" },
+    { name: "IT Training", href: "#" },
   ],
   industries: [
     { name: "IT & Technology", href: "/industries/it-technology" },

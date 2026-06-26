@@ -7,7 +7,7 @@ import { X } from "lucide-react";
 
 export default function WhatsAppButton() {
   const [showTooltip, setShowTooltip] = useState(false);
-  const phoneNumber = "914012345678"; // Replace with actual number
+  const phoneNumber = "917780667248"; // Replace with actual number
   const message = encodeURIComponent("Hello! I'm interested in Sreehisoft Solutions.");
 
   // Show tooltip after a small delay on initial load to grab attention

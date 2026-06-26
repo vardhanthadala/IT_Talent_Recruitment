@@ -134,7 +134,7 @@ const getTechIconData = (techName: string) => {
     if (t.includes('k8s') || t.includes('kube')) return TECH_ICON_MAP["Kubernetes"];
     if (t.includes('linux') || t.includes('ubuntu') || t.includes('rhel')) return TECH_ICON_MAP["Linux"];
     if (t.includes('spring')) return TECH_ICON_MAP["Spring Boot"];
-    if (t.includes('mac') || t.includes('ios') || t.includes('apple')) return TECH_ICON_MAP["Objective-C"];
+    if (t.includes('macos') || t === 'mac' || t.includes('ios') || t.includes('apple')) return TECH_ICON_MAP["Objective-C"];
     if (t.includes('android')) return TECH_ICON_MAP["Kotlin"];
     if (t.includes('git')) return TECH_ICON_MAP["GitLab CI"];
     if (t.includes('testrail') || t.includes('zephyr')) return TECH_ICON_MAP["TestRail"];
@@ -153,7 +153,22 @@ const getTechIconData = (techName: string) => {
     if (t.includes('airflow')) return { slug: "apacheairflow", color: "#017CEE" };
     if (t.includes('snowflake')) return { slug: "snowflake", color: "#29B5E8" };
     if (t.includes('databricks')) return { slug: "databricks", color: "#FF3621" };
-    if (t.includes('r')) return { slug: "r", color: "#276DC3" };
+    
+    // IT Training & Clinical Specifics
+    if (t.includes('sas')) return { icon: FiDatabase, color: "#0078D4" };
+    if (t.includes('cdisc')) return { icon: FiCheckCircle, color: "#1679A7" };
+    if (t.includes('sdtm')) return { icon: FiLayers, color: "#00A3DF" };
+    if (t.includes('adam')) return { icon: FiPieChart, color: "#2EAD33" };
+    
+    if (t.includes('tidyverse') || t.includes('pharmaverse')) return { icon: FiLayers, color: "#276DC3" };
+    if (t.includes('ggplot2')) return { icon: FiBarChart2, color: "#276DC3" };
+    if (t.includes('shiny')) return { icon: FiMonitor, color: "#276DC3" };
+    if (t.includes('r markdown')) return { slug: "markdown", color: "#000000" };
+    if (t.includes('nlp') || t.includes('machine learning')) return { icon: FiCpu, color: "#FF6F00" };
+    if (t.includes('ehr') || t.includes('epidemiology') || t.includes('survival') || t.includes('propensity') || t.includes('causal')) return { icon: FiActivity, color: "#47A248" };
+    if (t.includes('nca') || t.includes('differential') || t.includes('pharmacokinetics') || t.includes('pharmacodynamics')) return { icon: FiActivity, color: "#E97627" };
+
+    if (t === 'r') return { slug: "r", color: "#276DC3" };
     if (t.includes('jupyter')) return { slug: "jupyter", color: "#F37626" };
     if (t.includes('pandas')) return { slug: "pandas", color: "#150458" };
     if (t.includes('scikit')) return { slug: "scikitlearn", color: "#F7931E" };
@@ -190,17 +205,22 @@ const getTechIconData = (techName: string) => {
     return { icon: FiCode, color: "#94a3b8" }; // Elegant slate fallback
 };
 
-const ROTATING_WORDS = ["powers us", "drives us", "scales us", "elevates us"];
+const DEFAULT_ROTATING_WORDS = ["powers us", "drives us", "scales us", "elevates us"];
+const TRAINING_ROTATING_WORDS = ["from our experts", "in our courses", "for your career", "through training"];
 
 export default function TechStack({ role }: { role: RoleDetails }) {
+    const isITTraining = role?.category === "IT Training";
+    const rotatingWords = isITTraining ? TRAINING_ROTATING_WORDS : DEFAULT_ROTATING_WORDS;
+    const prefixText = isITTraining ? "Technologies you learn" : "The stack that";
+    
     const [wordIndex, setWordIndex] = React.useState(0);
 
     React.useEffect(() => {
         const interval = setInterval(() => {
-            setWordIndex((prev) => (prev + 1) % ROTATING_WORDS.length);
+            setWordIndex((prev) => (prev + 1) % rotatingWords.length);
         }, 2500);
         return () => clearInterval(interval);
-    }, []);
+    }, [rotatingWords.length]);
 
     // Duplicate the technologies array 4 times to ensure seamless infinite scrolling
     const marqueeItems = [...role.technologies, ...role.technologies, ...role.technologies, ...role.technologies];
@@ -215,8 +235,8 @@ export default function TechStack({ role }: { role: RoleDetails }) {
                 className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-10 md:mb-16"
             >
                 <h2 className="text-3xl md:text-[48px] lg:text-[56px] font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] tracking-[-0.02em] leading-[1.1] flex flex-wrap items-center gap-x-2 md:gap-x-4">
-                    The stack that
-                    <div className="relative inline-block h-[1.2em] w-[180px] md:w-[320px] lg:w-[380px] overflow-hidden">
+                    {prefixText}
+                    <div className="relative inline-block h-[1.2em] w-[200px] md:w-[360px] lg:w-[460px] overflow-hidden">
                         <AnimatePresence>
                             <motion.span
                                 key={wordIndex}
@@ -226,7 +246,7 @@ export default function TechStack({ role }: { role: RoleDetails }) {
                                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                                 className="absolute font-normal italic text-blue-600 left-0 top-0 whitespace-nowrap origin-center"
                             >
-                                {ROTATING_WORDS[wordIndex]}
+                                {rotatingWords[wordIndex]}
                             </motion.span>
                         </AnimatePresence>
                     </div>

@@ -462,7 +462,7 @@ export default function ContactClient() {
                             </div>
                             <h3 className="text-lg font-bold text-neutral-900 mb-2">Call Us Directly</h3>
                             <p className="text-sm text-neutral-500 mb-4">Available during working hours.</p>
-                            <a href="tel:+914012345678" className="text-blue-600 text-sm font-medium hover:underline">+91 40 1234 5678</a>
+                            <a href="tel:+917780667248" className="text-blue-600 text-sm font-medium hover:underline">+91 77806 67248</a>
                         </div>
                     </div>
                 </motion.div>

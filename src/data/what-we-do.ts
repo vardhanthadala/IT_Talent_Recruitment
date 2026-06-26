@@ -361,5 +361,92 @@ export const rolesData: Record<string, RoleDetails> = {
             { title: "OLAP Cubes", description: "Building multi-dimensional data models for lightning-fast business reporting. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
             { title: "Self-Service BI", description: "Empowering non-technical users to build their own reports safely and accurately. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." }
         ]
+    },
+    
+    // IT TRAINING
+    "clinical-sas-training": {
+        id: "clinical-sas-training",
+        title: "Clinical SAS Training",
+        category: "IT Training",
+        shortDescription: "Master the Legacy Standard for clinical trial data.",
+        fullDescription: "Master the Legacy Standard. Take clinical trial data from raw format to FDA-submission ready. Learn essential Base/Advanced SAS, macro programming, and how to build compliant SDTM and ADaM datasets.",
+        heroImage: "/images/IT-training.jpg",
+        technologies: ["Base SAS", "Advanced SAS", "SAS Macros", "SDTM", "ADaM", "CDISC"],
+        deliverables: [
+            { title: "Raw Data Transformation", description: "Learn to process raw clinical trial data into standardized formats efficiently. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "FDA Compliance", description: "Master the creation of FDA-submission ready datasets using industry standards. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Macro Programming", description: "Develop advanced skills in SAS macro programming to automate complex tasks. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "SDTM Datasets", description: "Build fully compliant Study Data Tabulation Model (SDTM) datasets from scratch. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "ADaM Datasets", description: "Construct Analysis Data Model (ADaM) datasets to support statistical analysis. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Quality Control", description: "Implement rigorous quality control checks to ensure data integrity and accuracy. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." }
+        ]
+    },
+    "r-for-clinical-trials": {
+        id: "r-for-clinical-trials",
+        title: "R for Clinical Trials",
+        category: "IT Training",
+        shortDescription: "The Future of Clinical Reporting with open-source tools.",
+        fullDescription: "The Future of Clinical Reporting. Transition into open-source clinical programming. Master the pharmaverse ecosystem and use the Tidyverse to design publication-grade Tables, Listings, and Figures (TLFs) accepted by regulatory bodies.",
+        heroImage: "/images/IT-training.jpg",
+        technologies: ["R", "Tidyverse", "Pharmaverse", "ggplot2", "Shiny", "R Markdown"],
+        deliverables: [
+            { title: "Open-Source Transition", description: "Seamlessly transition your clinical reporting workflows into open-source R. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Pharmaverse Mastery", description: "Navigate and leverage the pharmaverse ecosystem for clinical trial analysis. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Data Wrangling", description: "Utilize the Tidyverse for efficient and reproducible data manipulation. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Publication-Grade TLFs", description: "Design regulatory-accepted Tables, Listings, and Figures using R. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Automated Reporting", description: "Streamline the generation of clinical reports using advanced R tools. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Regulatory Acceptance", description: "Ensure all outputs meet the strict standards required by regulatory bodies. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." }
+        ]
+    },
+    "python-for-clinical-data-science": {
+        id: "python-for-clinical-data-science",
+        title: "Python for Clinical Data Science",
+        category: "IT Training",
+        shortDescription: "Next-Gen Automation & Analytics bridging data and AI.",
+        fullDescription: "Next-Gen Automation & Analytics. Bridge the gap between clinical data and AI. Learn to handle massive health data pipelines, parse unstructured clinical notes with NLP, and leverage Pandas and Machine Learning for modern drug discovery.",
+        heroImage: "/images/IT-training.jpg",
+        technologies: ["Python", "Pandas", "NLP", "Machine Learning", "Scikit-learn", "PyTorch"],
+        deliverables: [
+            { title: "AI Integration", description: "Bridge the gap between traditional clinical data management and modern AI. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Data Pipelines", description: "Build and handle massive health data pipelines for comprehensive analytics. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "NLP Processing", description: "Parse and analyze unstructured clinical notes using Natural Language Processing. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Advanced Analytics", description: "Leverage Pandas and other Python libraries for deep data exploration. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Machine Learning", description: "Apply predictive machine learning models to accelerate modern drug discovery. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Automation", description: "Automate repetitive data science tasks to increase efficiency and accuracy. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." }
+        ]
+    },
+    "r-for-real-world-evidence": {
+        id: "r-for-real-world-evidence",
+        title: "R for Real-World Evidence (RWE)",
+        category: "IT Training",
+        shortDescription: "Unlock Observational Data for real-world impact.",
+        fullDescription: "Unlock Observational Data. Shift from traditional trials to real-world impact. Learn how to wrangle messy electronic health records (EHR) and insurance claims datasets using R, applying advanced epidemiological statistics to track post-market drug safety and efficacy.",
+        heroImage: "/images/IT-training.jpg",
+        technologies: ["R", "Epidemiology", "EHR Analysis", "Survival Analysis", "Propensity Scoring", "Causal Inference"],
+        deliverables: [
+            { title: "EHR Wrangling", description: "Learn to efficiently clean and structure messy electronic health records (EHR). We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Claims Data Analysis", description: "Process and analyze complex insurance claims datasets for actionable insights. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Epidemiological Statistics", description: "Apply advanced epidemiological methods to assess real-world data. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Drug Safety Tracking", description: "Monitor and evaluate post-market drug safety using observational data. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Efficacy Assessment", description: "Determine the real-world effectiveness of treatments outside clinical trials. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Impact Shift", description: "Successfully shift focus from controlled trials to real-world population impact. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." }
+        ]
+    },
+    "pk-pd-modeling-pharmacometrics": {
+        id: "pk-pd-modeling-pharmacometrics",
+        title: "PK/PD Modeling & Pharmacometrics",
+        category: "IT Training",
+        shortDescription: "Drive precision medicine with advanced modeling.",
+        fullDescription: "Drive precision medicine. Master Non-Compartmental Analysis (NCA), compartmental differential equations, and population exposure-response simulations using advanced R and Python libraries.",
+        heroImage: "/images/IT-training.jpg",
+        technologies: ["R", "Python", "NCA", "Differential Equations", "Pharmacokinetics", "Pharmacodynamics"],
+        deliverables: [
+            { title: "NCA Mastery", description: "Perform accurate Non-Compartmental Analysis (NCA) on complex datasets. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Differential Equations", description: "Formulate and solve compartmental differential equations for drug modeling. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Population Simulations", description: "Conduct population exposure-response simulations to predict outcomes. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Precision Medicine", description: "Leverage advanced modeling techniques to drive precision medicine initiatives. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Cross-Language Tools", description: "Utilize both R and Python libraries to maximize modeling capabilities. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." },
+            { title: "Advanced Pharmacometrics", description: "Develop a deep understanding of pharmacokinetics and pharmacodynamics principles. We leverage industry-leading best practices to ensure seamless execution and robust scalability. Our proactive approach guarantees long-term success, minimizing risks while maximizing your overall return on investment." }
+        ]
     }
 };

@@ -4,7 +4,9 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export default function SharedCTA({ roleTitle }: { roleTitle: string }) {
+export default function SharedCTA({ roleTitle, roleCategory }: { roleTitle: string, roleCategory?: string }) {
+    const isITTraining = roleCategory === "IT Training";
+    
     return (
         <section className="relative w-full py-12 md:py-16 bg-[#005c8a] overflow-hidden flex items-center justify-center font-[family-name:var(--font-poppins-custom)] group">
             
@@ -36,18 +38,22 @@ export default function SharedCTA({ roleTitle }: { roleTitle: string }) {
                 </div>
 
                 <h2 className="text-3xl md:text-[48px] lg:text-[56px] font-[family-name:var(--font-poppins-custom)] font-bold text-white mb-6 tracking-[-0.02em] leading-[1.1]">
-                    Need expert {roleTitle}?
+                    {isITTraining ? `Ready to master ${roleTitle}?` : `Need expert ${roleTitle}?`}
                 </h2>
                 
                 <p className="text-sm md:text-[15px] font-[family-name:var(--font-poppins-custom)] font-light text-white/95 mb-10 leading-[1.7] max-w-2xl mx-auto">
-                    Let's arrange an initial consultation to identify your greatest needs and <br className="hidden md:block"/> explore potential areas for optimization.
+                    {isITTraining ? (
+                        <>Let's arrange an initial consultation to identify your training needs and <br className="hidden md:block"/> explore potential areas for skill development.</>
+                    ) : (
+                        <>Let's arrange an initial consultation to identify your greatest needs and <br className="hidden md:block"/> explore potential areas for optimization.</>
+                    )}
                 </p>
 
                 <Link
                     href="/contact"
                     className="inline-block px-8 py-3 bg-white text-[#0f172a] text-[13px] font-[family-name:var(--font-poppins-custom)] font-medium hover:bg-gray-100 transition-all duration-300 shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_15px_50px_rgba(0,0,0,0.15)] transform hover:-translate-y-0.5 rounded-sm"
                 >
-                    Hire top talent
+                    {isITTraining ? "Enroll Now" : "Hire top talent"}
                 </Link>
             </motion.div>
         </section>
