@@ -19,18 +19,51 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const servicesMenu = [
-    {
-      category: "CORE SERVICES",
-      items: [
-        { name: "Digital Transformation", description: "Comprehensive digital transformation for modern enterprises", icon: Globe, href: "/services/digital-transformation" },
-        { name: "Artificial Intelligence", description: "Leverage AI and machine learning to unlock opportunities", icon: Cpu, href: "/services/artificial-intelligence" },
-        { name: "Data & BI", description: "Transform raw data into actionable insights", icon: BarChart, href: "/services/data-bi" },
-        { name: "Application Services", description: "Corporate and consumer applications for your business", icon: Smartphone, href: "/services/application-services" },
-        { name: "Technology Advisory", description: "Expert guidance tailored to your specific business needs", icon: Lightbulb, href: "/services/technology-advisory" },
-        { name: "Managed IT Services", description: "Reliable, scalable, and secure operations backed by SLAs", icon: Settings, href: "/services/managed-it-services" }
-      ]
-    }
+  const whatWeDoMobileMenu = [
+    { category: "IT Training", icon: GraduationCap, items: [
+      { name: "Clinical SAS Training", href: "/what-we-do/clinical-sas-training" },
+      { name: "R for Clinical Trials", href: "/what-we-do/r-for-clinical-trials" },
+      { name: "Python for Clinical Data Science", href: "/what-we-do/python-for-clinical-data-science" },
+      { name: "R for Real-World Evidence (RWE)", href: "/what-we-do/r-for-real-world-evidence" },
+      { name: "PK/PD Modeling & Pharmacometrics", href: "/what-we-do/pk-pd-modeling-pharmacometrics" },
+    ]},
+    { category: "Development", icon: Code, items: [
+      { name: "Frontend Engineering", href: "/what-we-do/frontend-developers" },
+      { name: "Backend Engineering", href: "/what-we-do/backend-engineers" },
+      { name: "Full Stack Development", href: "/what-we-do/full-stack-developers" },
+      { name: "Mobile App Development", href: "/what-we-do/mobile-app-devs" },
+      { name: "UI/UX Design", href: "/what-we-do/ui-ux-designers" },
+    ]},
+    { category: "Testing & QA", icon: ShieldCheck, items: [
+      { name: "Automation Testing", href: "/what-we-do/automation-engineers" },
+      { name: "Manual QA Testing", href: "/what-we-do/manual-qa-testers" },
+      { name: "Performance Testing", href: "/what-we-do/performance-testers" },
+      { name: "Security Analysis", href: "/what-we-do/security-analysts" },
+      { name: "SDET Services", href: "/what-we-do/sdet-professionals" },
+    ]},
+    { category: "Operations", icon: Server, items: [
+      { name: "DevOps Services", href: "/what-we-do/devops-engineers" },
+      { name: "Cloud Architecture", href: "/what-we-do/cloud-architects" },
+      { name: "System Administration", href: "/what-we-do/system-administrators" },
+      { name: "Network Engineering", href: "/what-we-do/network-engineers" },
+      { name: "IT Support", href: "/what-we-do/it-support-specialists" },
+    ]},
+    { category: "AI & Data", icon: BrainCircuit, items: [
+      { name: "Data Science", href: "/what-we-do/data-scientists" },
+      { name: "Machine Learning Engineering", href: "/what-we-do/machine-learning-engineers" },
+      { name: "Data Analysis", href: "/what-we-do/data-analysts" },
+      { name: "Data Engineering", href: "/what-we-do/data-engineers" },
+      { name: "Business Intelligence", href: "/what-we-do/bi-developers" },
+    ]}
+  ];
+
+  const industriesMobileMenu = [
+    { name: "IT & Technology", icon: Laptop, href: "/industries/it-technology" },
+    { name: "Finance & Banking", icon: Landmark, href: "/industries/finance-banking" },
+    { name: "Healthcare & Life Sciences", icon: HeartPulse, href: "/industries/healthcare-life-sciences" },
+    { name: "Manufacturing & Logistics", icon: Factory, href: "/industries/manufacturing-logistics" },
+    { name: "Retail & E-commerce", icon: ShoppingCart, href: "/industries/retail-ecommerce" },
+    { name: "Professional Services", icon: Briefcase, href: "/industries/professional-services" },
   ];
 
   const navLinks = [
@@ -57,7 +90,7 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Navigation (Centered) */}
-            <nav className="hidden md:flex items-stretch justify-center flex-1 space-x-2 lg:space-x-4 xl:space-x-6">
+            <nav className="hidden lg:flex items-stretch justify-center flex-1 space-x-2 lg:space-x-4 xl:space-x-6">
               {navLinks.map((link) => (
                 <div
                   key={link.name}
@@ -97,45 +130,66 @@ export default function Navbar() {
                             <div className="grid grid-cols-5 gap-8 w-full mb-6 relative">
                               {/* Dotted connecting line */}
                               <div className="absolute top-1/2 left-4 right-[20%] h-[1px] border-t border-dashed border-gray-300 -z-10"></div>
+                              {/* Column 1 Icon (Training) */}
+                              <div className="flex justify-start">
+                                <div className="w-auto pr-4 flex items-center text-black z-10 relative bg-white">
+                                  <GraduationCap className="w-6 h-6" strokeWidth={1.5} />
+                                </div>
+                              </div>
                               
-                              {/* Column 1 Icon (Development) */}
+                              {/* Column 2 Icon (Development) */}
                               <div className="flex justify-start">
                                 <div className="w-auto pr-4 flex items-center text-black z-10 relative bg-white">
                                   <Code className="w-6 h-6" strokeWidth={1.5} />
                                 </div>
                               </div>
                               
-                              {/* Column 2 Icon (Testing) */}
+                              {/* Column 3 Icon (Testing) */}
                               <div className="flex justify-start">
                                 <div className="w-auto pr-4 flex items-center text-black z-10 relative bg-white">
                                   <ShieldCheck className="w-6 h-6" strokeWidth={1.5} />
                                 </div>
                               </div>
-                              
-                              {/* Column 3 Icon (Operations) */}
+
+                              {/* Column 4 Icon (Operations) */}
                               <div className="flex justify-start">
                                 <div className="w-auto pr-4 flex items-center text-black z-10 relative bg-white">
                                   <Server className="w-6 h-6" strokeWidth={1.5} />
                                 </div>
                               </div>
-
-                              {/* Column 4 Icon (AI & Data) */}
+                              
+                              {/* Column 5 Icon (AI & Data) */}
                               <div className="flex justify-start">
                                 <div className="w-auto pr-4 flex items-center text-black z-10 relative bg-white">
                                   <BrainCircuit className="w-6 h-6" strokeWidth={1.5} />
-                                </div>
-                              </div>
-                              
-                              {/* Column 5 Icon (Training) */}
-                              <div className="flex justify-start">
-                                <div className="w-auto pr-4 flex items-center text-black z-10 relative bg-white">
-                                  <GraduationCap className="w-6 h-6" strokeWidth={1.5} />
                                 </div>
                               </div>
                             </div>
                             
                             {/* Lists row */}
                             <div className="grid grid-cols-5 gap-8 w-full">
+                              {/* IT Training and Placement */}
+                              <div>
+                                <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-4 uppercase text-[13px] tracking-wide whitespace-nowrap">IT Training</h3>
+                                <ul className="space-y-3">
+                                  <li>
+                                    <Link href="/what-we-do/clinical-sas-training" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">Clinical SAS Training</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="/what-we-do/r-for-clinical-trials" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">R for Clinical Trials</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="/what-we-do/python-for-clinical-data-science" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">Python for Clinical Data Science</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="/what-we-do/r-for-real-world-evidence" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">R for Real-World Evidence (RWE)</Link>
+                                  </li>
+                                  <li>
+                                    <Link href="/what-we-do/pk-pd-modeling-pharmacometrics" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">PK/PD Modeling & Pharmacometrics</Link>
+                                  </li>
+                                </ul>
+                              </div>
+
                               {/* Development */}
                               <div>
                                 <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-4 uppercase text-[13px] tracking-wide">Development</h3>
@@ -223,28 +277,6 @@ export default function Navbar() {
                                   </li>
                                 </ul>
                               </div>
-                              
-                              {/* IT Training and Placement */}
-                              <div>
-                                <h3 className="font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-4 uppercase text-[13px] tracking-wide whitespace-nowrap">IT Training</h3>
-                                <ul className="space-y-3">
-                                  <li>
-                                    <Link href="/what-we-do/clinical-sas-training" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">Clinical SAS Training</Link>
-                                  </li>
-                                  <li>
-                                    <Link href="/what-we-do/r-for-clinical-trials" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">R for Clinical Trials</Link>
-                                  </li>
-                                  <li>
-                                    <Link href="/what-we-do/python-for-clinical-data-science" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">Python for Clinical Data Science</Link>
-                                  </li>
-                                  <li>
-                                    <Link href="/what-we-do/r-for-real-world-evidence" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">R for Real-World Evidence (RWE)</Link>
-                                  </li>
-                                  <li>
-                                    <Link href="/what-we-do/pk-pd-modeling-pharmacometrics" className="text-[14px] text-slate-500 hover:text-blue-600 transition-colors block leading-tight">PK/PD Modeling & Pharmacometrics</Link>
-                                  </li>
-                                </ul>
-                              </div>
                             </div>
                           </>
                         )}
@@ -315,14 +347,14 @@ export default function Navbar() {
             </nav>
 
             {/* Right Actions */}
-            <div className="hidden md:flex items-center justify-end w-auto lg:w-1/4 space-x-6">
+            <div className="hidden lg:flex items-center justify-end w-auto lg:w-1/4 space-x-6">
               <Link href="/contact" className="whitespace-nowrap px-4 lg:px-5 py-2 rounded-full bg-blue-600 text-white text-[15px] lg:text-[16px] font-[family-name:var(--font-poppins-custom)] font-medium hover:bg-blue-700 transition-colors">
                 Contact Us
               </Link>
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center">
+            <div className="lg:hidden flex items-center">
               <button
                 onClick={() => setIsOpen(true)}
                 className="p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
@@ -338,14 +370,14 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[55] transition-opacity duration-300 md:hidden ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[55] transition-opacity duration-300 lg:hidden ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         onClick={() => setIsOpen(false)}
       />
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`fixed inset-y-0 left-0 w-3/4 max-w-sm bg-white z-[60] transform transition-transform duration-300 ease-in-out md:hidden flex flex-col shadow-2xl border-r border-gray-200 ${isOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed inset-y-0 left-0 w-3/4 max-w-sm bg-white z-[60] transform transition-transform duration-300 ease-in-out lg:hidden flex flex-col shadow-2xl border-r border-gray-200 ${isOpen ? "translate-x-0" : "-translate-x-full"
           }`}
       >
         <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
@@ -376,9 +408,33 @@ export default function Navbar() {
               >
                 {link.name}
               </Link>
-              {link.hasMegaMenu && (
+              {link.hasMegaMenu && link.name === "What We Do" && (
+                <div className="pl-6 mt-2 ml-4 mb-4">
+                  {whatWeDoMobileMenu.map((cat) => (
+                    <div key={cat.category} className="mb-4">
+                      <div className="flex items-center gap-2 mb-2 text-slate-800 font-semibold text-sm">
+                        <cat.icon className="w-4 h-4 text-blue-600" />
+                        <span>{cat.category}</span>
+                      </div>
+                      <div className="pl-6 space-y-2 border-l border-gray-200">
+                        {cat.items.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.href}
+                            className="block px-3 py-1.5 text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {link.hasMegaMenu && link.name === "Industries" && (
                 <div className="pl-6 space-y-3 mt-2 border-l-2 border-gray-100 ml-4 mb-4">
-                  {servicesMenu[0].items.map((subItem) => (
+                  {industriesMobileMenu.map((subItem) => (
                     <Link
                       key={subItem.name}
                       href={subItem.href}
