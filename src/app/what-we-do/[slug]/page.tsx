@@ -5,6 +5,7 @@ import WhatWeDeliver from "@/components/what-we-do/WhatWeDeliver";
 import TechStack from "@/components/what-we-do/TechStack";
 import SharedCTA from "@/components/what-we-do/SharedCTA";
 import Testimonials from "@/components/what-we-do/Testimonials";
+import OtherRoles from "@/components/what-we-do/OtherRoles";
 import { Metadata } from "next";
 
 type Props = {
@@ -52,6 +53,9 @@ export default async function WhatWeDoRolePage({ params }: Props) {
             {role.category === "IT Training" && (
                 <Testimonials />
             )}
+
+            {/* Render other roles in the same category (e.g. Other IT Training programs) */}
+            <OtherRoles currentRole={role} />
 
             {/* 4. Call to Action */}
             <SharedCTA roleTitle={role.title} roleCategory={role.category} />
