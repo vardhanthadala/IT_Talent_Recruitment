@@ -92,6 +92,46 @@ export default function FeatureGridSection() {
             />
           </motion.div>
 
+          {/* Block 5: Image (Bottom Left) - Left to Right Unwrap */}
+          <motion.div
+            initial={{ clipPath: "inset(0 100% 0 0)" }}
+            whileInView={{ clipPath: "inset(0 0% 0 0)" }}
+            viewport={{ once: true, margin: "0px" }}
+            transition={{ duration: 0.8, ease: [0.65, 0, 0.35, 1] }}
+            className="relative w-full h-[350px] sm:h-[450px] lg:h-[600px] order-5"
+          >
+            <Image
+              src="/images/it-training-home.jpg"
+              alt="IT Training Programs"
+              fill
+              className="object-cover object-center"
+            />
+          </motion.div>
+
+          {/* Block 6: Text (Bottom Right) */}
+          <div className="flex items-center justify-center bg-[#f4f9ff] p-8 sm:p-12 lg:p-16 xl:p-24 h-auto lg:h-[600px] order-6">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "0px" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="max-w-md w-full"
+            >
+              <h2 className="text-3xl md:text-[48px] lg:text-[56px] font-[family-name:var(--font-poppins-custom)] font-bold text-[#0f172a] mb-6 tracking-[-0.02em] leading-[1.1]">
+                IT Training.
+              </h2>
+              <p className="text-sm md:text-[15px] font-[family-name:var(--font-poppins-custom)] font-light text-gray-600 mb-10 leading-[1.7]">
+                Master the Legacy Standard for clinical trial data, transition into open-source clinical programming with R, and bridge the gap between clinical data and AI using Python.
+              </p>
+              <Link
+                href="/what-we-do/clinical-sas-training"
+                className="inline-block px-6 py-2.5 border border-[#0f172a] text-[#0f172a] text-[13px] font-[family-name:var(--font-poppins-custom)] font-medium hover:bg-[#0f172a] hover:text-white transition-all duration-300"
+              >
+                explore courses
+              </Link>
+            </motion.div>
+          </div>
+
         </div>
       </div>
     </section>
